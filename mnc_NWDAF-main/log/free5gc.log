@@ -1,0 +1,10 @@
+time="2024-09-30T14:52:21+04:00" level=info msg=nwdaf category=App component=NWDAF
+time="2024-09-30T14:52:21+04:00" level=info msg="NWDAF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.21.8 linux/amd64" category=App component=NWDAF
+time="2024-09-30T14:52:21+04:00" level=info msg="Read config from [./nwdafcfg.yaml]" category=CFG component=NWDAF
+time="2024-09-30T14:52:21+04:00" level=info msg="nwdafconfig Info: Version[1.0.1] Description[NWDAF instance for 5G core network analytics]" category=CTX component=NWDAF
+time="2024-11-27T15:52:50+04:00" level=info msg=nwdaf category=App component=NWDAF
+time="2024-11-27T15:52:50+04:00" level=info msg="NWDAF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.21.8 linux/amd64" category=App component=NWDAF
+time="2024-11-27T15:52:50+04:00" level=info msg="Read config from [./nwdafcfg.yaml]" category=CFG component=NWDAF
+time="2024-11-27T15:52:50+04:00" level=info msg="nwdafconfig Info: Version[1.0.1] Description[NWDAF instance for 5G core network analytics]" category=CTX component=NWDAF
+time="2024-11-27T15:52:50+04:00" level=info msg="AMF subscription successful: " category=Consumer component=NWDAF
+time="2024-11-27T15:52:50+04:00" level=info msg="AMF Ip address at: http://127.0.0.18:8000" category=Consumer component=NWDAF
