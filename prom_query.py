@@ -39,7 +39,7 @@ def query_prometheus(promql) -> list:
     """
     # queryProm = ast.literal_eval(promql)
     print("I have accessed the query_prometheus function")
-    print(promql)
+    
     query = extract_metric_name(promql)#queryProm['query']
     print(query)
 

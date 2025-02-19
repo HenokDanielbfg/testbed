@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -77,6 +78,60 @@ type SMFEvent struct {
 	EventType string `json:"eventType"`
 	Timestamp int64  `json:"timestamp"`
 	Data      string `json:"data"`
+}
+
+func HandleCLICommands(nwdafCtx *nwdaf_context.NWDAFContext, amfProfile, smfProfile models.NfProfile) {
+	// Define CLI flags
+	actionAMF := flag.String("amf", "", "Subscribe/Unsubscribe from AMF events (values: 'subscribe' or 'unsubscribe')")
+	actionSMF := flag.String("smf", "", "Subscribe/Unsubscribe from SMF events (values: 'subscribe' or 'unsubscribe')")
+	actionAll := flag.String("all", "", "Subscribe/Unsubscribe from all events (values: 'subscribe' or 'unsubscribe')")
+	flag.Parse()
+
+	// Determine the action: subscribe or unsubscribe
+	if *actionAll == "subscribe" || *actionAMF == "subscribe" {
+		log.Println("Subscribing to AMF events...")
+		amfSubID, err := consumer.SubscribeToAMF_UEStatus(nwdafCtx, amfProfile)
+		if err != nil {
+			log.Printf("AMF subscription failed: %v\n", err)
+		} else {
+			log.Printf("Successfully subscribed to AMF events. Subscription ID: %s\n", amfSubID)
+		}
+	}
+
+	if *actionAll == "subscribe" || *actionSMF == "subscribe" {
+		log.Println("Subscribing to SMF events...")
+		smfSubID, err := consumer.SubscribeToSMFEvents(nwdafCtx, smfProfile)
+		if err != nil {
+			log.Printf("SMF subscription failed: %v\n", err)
+		} else {
+			log.Printf("Successfully subscribed to SMF events. Subscription ID: %s\n", smfSubID)
+		}
+	}
+
+	if *actionAll == "unsubscribe" || *actionAMF == "unsubscribe" {
+		log.Println("Unsubscribing from AMF events...")
+		err := consumer.UnsubscribeFromAMF_UEStatus(nwdafCtx, amfProfile.NfInstanceId, amfProfile)
+		if err != nil {
+			log.Printf("AMF unsubscription failed: %v\n", err)
+		} else {
+			log.Println("Successfully unsubscribed from AMF events.")
+		}
+	}
+
+	if *actionAll == "unsubscribe" || *actionSMF == "unsubscribe" {
+		log.Println("Unsubscribing from SMF events...")
+		err := consumer.UnsubscribeFromSMF_events(nwdafCtx, smfProfile.NfInstanceId, smfProfile)
+		if err != nil {
+			log.Printf("SMF unsubscription failed: %v\n", err)
+		} else {
+			log.Println("Successfully unsubscribed from SMF events.")
+		}
+	}
+
+	// Exit after executing CLI command
+	if *actionAMF != "" || *actionSMF != "" || *actionAll != "" {
+		os.Exit(0)
+	}
 }
 
 func NewApp(ctx context.Context, cfg *factory.Config) (*NwdafApp, error) {
@@ -157,6 +212,8 @@ func (a *NwdafApp) Start() {
 	} else {
 		log.Printf("SMF event subscription Id is: %s", SmfsubId)
 	}
+	// Handle CLI commands for dynamic subscription/unsubscription
+	HandleCLICommands(a.nwdafCtx, amfInstances.NfInstances[0], smfInstances.NfInstances[0])
 
 	// a.wg.Add(1)
 	// go a.listenShutdownEvent()

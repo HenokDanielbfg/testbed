@@ -5,11 +5,11 @@ import json
 import sys
 from prom_query import query_prometheus
 #henokdaniel678
-api_key = "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"
+api_key = "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"
 
 #henokbfg
 # api_key = "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"
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 
 
 
@@ -93,7 +93,7 @@ def run_llm_conversation(user_message):
                 })
                 # 5. Let model interpret the JSON
                 second_response = client.chat.completions.create(
-                    model="gpt-4o",
+                    model="gpt-4o-mini",
                     messages=messages
                 )
                 print("successfully called the function")
@@ -114,7 +114,7 @@ def run_llm_conversation(user_message):
                 print(error_message)
                 # Let the model handle the error response
                 error_response = client.chat.completions.create(
-                    model="gpt-4o",
+                    model="gpt-4o-mini",
                     messages=messages
                 )
                 print("did not successfully call the function")

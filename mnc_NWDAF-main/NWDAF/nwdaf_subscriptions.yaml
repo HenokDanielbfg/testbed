@@ -1,0 +1,21 @@
+subscriptions:
+  amf:
+    notify_uri: "http://127.0.0.1:8000/nnwdaf-amfEvents"
+    events:
+      - REGISTRATION_STATE_REPORT  # Track UE registration state changes
+      - LOCATION_REPORT  # Get UE location updates
+      # - PRESENCE_IN_AOI_REPORT  # Track UE presence in a specific area (Commented out)
+      - CONNECTIVITY_STATE_REPORT  # Monitor UE reachability
+      - REACHABILITY_REPORT  # Detect UE reachability issues
+      - TIMEZONE_REPORT
+      - ACCESS_TYPE_REPORT
+      - UES_IN_AREA_REPORT
+
+  smf:
+    notify_uri: "http://127.0.0.1:8000/nnwdaf-smfEvents"
+    events:
+      - PDU_SES_EST  # PDU session establishment tracking
+      - PDU_SES_REL  # PDU session release monitoring
+      - UP_PATH_CH  # Track User Plane Path changes
+      - PLMN_CH  # Track UE roaming status (Commented out)
+      - AC_TY_CH	

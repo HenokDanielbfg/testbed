@@ -410,13 +410,11 @@ void RlsUdpTask::onLoop() {
                 x_dest = home.x;
                 y_dest = home.y;
                 currentLocation.type = nextLocation.type;
-                std::cout << home.x << std::endl;
 
             } else if (nextLocation.type=="work") {
                 x_dest = work.x;
                 y_dest = work.y;
                 currentLocation.type = nextLocation.type;
-                std::cout << work.y << std::endl;
 
             } else {
                 x_dest = nextLocation.x;

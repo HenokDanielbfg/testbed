@@ -52,3 +52,14 @@ type Sbi struct {
 	BindingIPv4  string `yaml:"bindingIPv4,omitempty"`  // IP used to run the server in the node.
 	Port         int    `yaml:"port,omitempty"`
 }
+
+type SubscriptionConfig struct {
+	Subscriptions struct {
+		AMF_SUB struct {
+			Events []string `yaml:"events"`
+		} `yaml:"amf"`
+		SMF_SUB struct {
+			Events []string `yaml:"events"`
+		} `yaml:"smf"`
+	} `yaml:"subscriptions"`
+}

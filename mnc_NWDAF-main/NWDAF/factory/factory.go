@@ -6,6 +6,8 @@ package factory
 
 import (
 	"fmt"
+	"strings"
+
 	// "io/ioutil"
 	"os"
 
@@ -16,26 +18,32 @@ import (
 
 var NwdafConfig *Config
 
-// TODO: Support configuration update from REST api
-// func InitConfigFactory(f string, cfg *Config) error {
-// 	if f == "" {
-// 		// Use default config path
-// 		f = NwdafDefaultConfigPath
-// 	}
-// 	// if content, err := ioutil.ReadFile(f); err != nil {
-// 	if content, err := os.ReadFile(f); err != nil {
+// Load only the uncommented event types from YAML
+func LoadSubscriptionConfig(filename string) (*SubscriptionConfig, error) {
+	config := &SubscriptionConfig{}
 
-// 		return err
-// 	} else {
-// 		NwdafConfig = Config{}
+	// Read file as a raw string (to handle comments)
+	rawContent, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read subscription config: %v", err)
+	}
 
-// 		if yamlErr := yaml.Unmarshal(content, &NwdafConfig); yamlErr != nil {
-// 			return yamlErr
-// 		}
-// 	}
+	// Remove commented-out lines (lines starting with #)
+	filteredContent := ""
+	lines := strings.Split(string(rawContent), "\n")
+	for _, line := range lines {
+		trimmed := strings.TrimSpace(line)
+		if !strings.HasPrefix(trimmed, "#") {
+			filteredContent += line + "\n"
+		}
+	}
 
-// 	return nil
-// }
+	// Parse YAML
+	if err := yaml.Unmarshal([]byte(filteredContent), config); err != nil {
+		return nil, fmt.Errorf("failed to parse subscription config: %v", err)
+	}
+	return config, nil
+}
 
 func InitConfigFactory(f string, cfg *Config) error {
 	if f == "" {

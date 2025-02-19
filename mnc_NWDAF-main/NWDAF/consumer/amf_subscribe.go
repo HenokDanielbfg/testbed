@@ -18,6 +18,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/prometheus/client_golang/prometheus"
 	nwdaf_context "nwdaf.com/context"
+	"nwdaf.com/factory"
 	"nwdaf.com/logger"
 	// "nwdaf.com/service"
 )
@@ -80,7 +81,15 @@ func SubscribeToAMFStatusChange(nwdafCtx *nwdaf_context.NWDAFContext, profile []
 }
 
 func SubscribeToAMF_UEStatus(nwdafCtx *nwdaf_context.NWDAFContext, profile models.NfProfile) (string, error) {
-	// amfClient := createAMFClient(nwdafCtx)
+	// Load dynamic subscription config
+	sub_config, err := factory.LoadSubscriptionConfig("nwdaf_subscriptions.yaml")
+	amfEvents := sub_config.Subscriptions.AMF_SUB.Events
+	var eventList []models.AmfEvent
+
+	// Map string events to AmfEvent types
+	for _, event := range amfEvents {
+		eventList = append(eventList, models.AmfEvent{Type: models.AmfEventType(event), ImmediateFlag: true})
+	}
 	notifyURI := fmt.Sprintf("http%s/nnwdaf-amfEvents", nwdafCtx.GetIPv4Uri())
 	if len(profile.Ipv4Addresses) == 0 || len(profile.Ipv4Addresses) == 0 {
 		return "", fmt.Errorf("no valid AMF profile found")
@@ -95,40 +104,41 @@ func SubscribeToAMF_UEStatus(nwdafCtx *nwdaf_context.NWDAFContext, profile model
 	client := Namf_EventExposure.NewAPIClient(configuration)
 
 	subscriptionData := models.AmfEventSubscription{
-		EventList: &[]models.AmfEvent{
-			{
-				Type:          models.AmfEventType_REGISTRATION_STATE_REPORT,
-				ImmediateFlag: true,
-			},
-			{
-				Type:          models.AmfEventType_LOCATION_REPORT,
-				ImmediateFlag: true,
-			},
-			{
-				Type:          models.AmfEventType_PRESENCE_IN_AOI_REPORT,
-				ImmediateFlag: true,
-			},
-			{
-				Type:          models.AmfEventType_TIMEZONE_REPORT,
-				ImmediateFlag: true,
-			},
-			{
-				Type:          models.AmfEventType_ACCESS_TYPE_REPORT,
-				ImmediateFlag: true,
-			},
-			{
-				Type:          models.AmfEventType_CONNECTIVITY_STATE_REPORT,
-				ImmediateFlag: true,
-			},
-			{
-				Type:          models.AmfEventType_REACHABILITY_REPORT,
-				ImmediateFlag: true,
-			},
-			{
-				Type:          models.AmfEventType_UES_IN_AREA_REPORT,
-				ImmediateFlag: true,
-			},
-		},
+		// EventList: &[]models.AmfEvent{
+		// 	{
+		// 		Type:          models.AmfEventType_REGISTRATION_STATE_REPORT,
+		// 		ImmediateFlag: true,
+		// 	},
+		// 	{
+		// 		Type:          models.AmfEventType_LOCATION_REPORT,
+		// 		ImmediateFlag: true,
+		// 	},
+		// 	{
+		// 		Type:          models.AmfEventType_PRESENCE_IN_AOI_REPORT,
+		// 		ImmediateFlag: true,
+		// 	},
+		// 	{
+		// 		Type:          models.AmfEventType_TIMEZONE_REPORT,
+		// 		ImmediateFlag: true,
+		// 	},
+		// 	{
+		// 		Type:          models.AmfEventType_ACCESS_TYPE_REPORT,
+		// 		ImmediateFlag: true,
+		// 	},
+		// 	{
+		// 		Type:          models.AmfEventType_CONNECTIVITY_STATE_REPORT,
+		// 		ImmediateFlag: true,
+		// 	},
+		// 	{
+		// 		Type:          models.AmfEventType_REACHABILITY_REPORT,
+		// 		ImmediateFlag: true,
+		// 	},
+		// 	{
+		// 		Type:          models.AmfEventType_UES_IN_AREA_REPORT,
+		// 		ImmediateFlag: true,
+		// 	},
+		// },
+		EventList:      &eventList,
 		EventNotifyUri: notifyURI,
 		NfId:           profile.NfInstanceId,
 		// NfId:                nwdafCtx.NfInstanceID,

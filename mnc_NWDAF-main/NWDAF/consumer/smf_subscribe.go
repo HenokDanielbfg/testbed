@@ -12,6 +12,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/prometheus/client_golang/prometheus"
 	nwdaf_context "nwdaf.com/context"
+	"nwdaf.com/factory"
 	"nwdaf.com/logger"
 )
 
@@ -33,6 +34,19 @@ var (
 )
 
 func SubscribeToSMFEvents(nwdafCtx *nwdaf_context.NWDAFContext, profile models.NfProfile) (string, error) {
+	// Load dynamic subscription config
+	config, err := factory.LoadSubscriptionConfig("nwdaf_subscriptions.yaml")
+	if err != nil {
+		return "", err
+	}
+
+	smfEvents := config.Subscriptions.SMF_SUB.Events
+	var eventList []models.EventSubscription
+
+	// Map string events to SmfEvent types
+	for _, event := range smfEvents {
+		eventList = append(eventList, models.EventSubscription{Event: models.SmfEvent(event)})
+	}
 	notifyURI := fmt.Sprintf("http%s/nnwdaf-smfEvents", nwdafCtx.GetIPv4Uri())
 	if len(profile.Ipv4Addresses) == 0 {
 		return "", fmt.Errorf("no valid SMF profile found")
@@ -48,21 +62,22 @@ func SubscribeToSMFEvents(nwdafCtx *nwdaf_context.NWDAFContext, profile models.N
 	client := Nsmf_EventExposure.NewAPIClient(configuration)
 
 	subscriptionData := models.NsmfEventExposure{
-		EventSubs: []models.EventSubscription{
-			{Event: models.SmfEvent_AC_TY_CH},
-			{Event: models.SmfEvent_UP_PATH_CH},
-			{Event: models.SmfEvent_PDU_SES_REL},
-			{Event: models.SmfEvent_PLMN_CH},
-			{Event: models.SmfEvent_PDU_SES_EST},
-			// {Event: models.SmfEvent_UE_IP_CH},
-			// {Event: models.SmfEvent},
-			// {Event: models.SmfEvent_COMM_FAIL},
-			// {Event: models.SmfEvent_QFI_ALLOC},
-			// {Event: models.SmfEvent_QOS_MON},
-		},
-		NotifUri: notifyURI,
-		NotifId:  notifyId,
-		AnyUeInd: true,
+		// EventSubs: []models.EventSubscription{
+		// 	{Event: models.SmfEvent_AC_TY_CH},
+		// 	{Event: models.SmfEvent_UP_PATH_CH},
+		// 	{Event: models.SmfEvent_PDU_SES_REL},
+		// 	{Event: models.SmfEvent_PLMN_CH},
+		// 	{Event: models.SmfEvent_PDU_SES_EST},
+		// 	// {Event: models.SmfEvent_UE_IP_CH},
+		// 	// {Event: models.SmfEvent},
+		// 	// {Event: models.SmfEvent_COMM_FAIL},
+		// 	// {Event: models.SmfEvent_QFI_ALLOC},
+		// 	// {Event: models.SmfEvent_QOS_MON},
+		// },
+		EventSubs: eventList,
+		NotifUri:  notifyURI,
+		NotifId:   notifyId,
+		AnyUeInd:  true,
 	}
 
 	ctx, _, err := nwdafCtx.GetTokenCtx(models.ServiceName_NSMF_EVENT_EXPOSURE, models.NfType_SMF)
