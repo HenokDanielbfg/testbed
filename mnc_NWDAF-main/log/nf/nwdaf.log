@@ -8,3 +8,39 @@ time="2024-11-27T15:52:50+04:00" level=info msg="Read config from [./nwdafcfg.ya
 time="2024-11-27T15:52:50+04:00" level=info msg="nwdafconfig Info: Version[1.0.1] Description[NWDAF instance for 5G core network analytics]" category=CTX component=NWDAF
 time="2024-11-27T15:52:50+04:00" level=info msg="AMF subscription successful: " category=Consumer component=NWDAF
 time="2024-11-27T15:52:50+04:00" level=info msg="AMF Ip address at: http://127.0.0.18:8000" category=Consumer component=NWDAF
+time="2025-02-19T08:32:46+04:00" level=info msg=nwdaf category=App component=NWDAF
+time="2025-02-19T08:32:46+04:00" level=info msg="NWDAF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.21.8 linux/amd64" category=App component=NWDAF
+time="2025-02-19T08:32:46+04:00" level=error msg="NWDAF Run error: flag provided but not defined: -amf" category=App component=NWDAF
+time="2025-02-19T08:33:29+04:00" level=info msg=nwdaf category=App component=NWDAF
+time="2025-02-19T08:33:29+04:00" level=info msg="NWDAF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.21.8 linux/amd64" category=App component=NWDAF
+time="2025-02-19T08:33:29+04:00" level=info msg="Read config from [./nwdafcfg.yaml]" category=CFG component=NWDAF
+time="2025-02-19T08:33:29+04:00" level=info msg="nwdafconfig Info: Version[1.0.1] Description[NWDAF instance for 5G core network analytics]" category=CTX component=NWDAF
+time="2025-02-19T08:33:29+04:00" level=info msg="AMF subscription successful: " category=Consumer component=NWDAF
+time="2025-02-19T08:33:29+04:00" level=info msg="AMF Ip address at: http://127.0.0.18:8000" category=Consumer component=NWDAF
+time="2025-02-19T08:33:29+04:00" level=info msg="AMF subscription successful. Subscription ID: 2" category=Consumer component=NWDAF
+time="2025-02-19T08:33:29+04:00" level=info msg="Notify ID is: 623b831b-d673-4195-8f08-9e92dd27e167" category=Consumer component=NWDAF
+time="2025-02-19T08:33:29+04:00" level=info msg="SMF IP address at: http://127.0.0.2:8000" category=Consumer component=NWDAF
+time="2025-02-19T08:33:29+04:00" level=info msg="SMF subscription successful. Subscription ID: 2" category=Consumer component=NWDAF
+time="2025-02-19T08:35:44+04:00" level=info msg=nwdaf category=App component=NWDAF
+time="2025-02-19T08:35:44+04:00" level=info msg="NWDAF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.21.8 linux/amd64" category=App component=NWDAF
+time="2025-02-19T08:35:44+04:00" level=error msg="NWDAF Run error: flag provided but not defined: -amf" category=App component=NWDAF
+time="2025-02-19T09:07:15+04:00" level=info msg="Successfully unsubscribed from AMF events. Subscription ID: 2" category=Consumer component=NWDAF
+time="2025-02-19T09:07:15+04:00" level=info msg="Successfully unsubscribed from SMF events. Subscription ID: 2" category=Consumer component=NWDAF
+time="2025-02-19T09:07:15+04:00" level=info msg="Send Deregister NFInstance" category=Consumer component=NWDAF
+time="2025-02-19T09:07:27+04:00" level=info msg=nwdaf category=App component=NWDAF
+time="2025-02-19T09:07:27+04:00" level=info msg="NWDAF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.21.8 linux/amd64" category=App component=NWDAF
+time="2025-02-19T09:07:27+04:00" level=info msg="Read config from [./nwdafcfg.yaml]" category=CFG component=NWDAF
+time="2025-02-19T09:07:27+04:00" level=info msg="nwdafconfig Info: Version[1.0.1] Description[NWDAF instance for 5G core network analytics]" category=CTX component=NWDAF
+time="2025-02-19T09:07:27+04:00" level=info msg="AMF subscription successful: " category=Consumer component=NWDAF
+time="2025-02-19T09:07:27+04:00" level=info msg="AMF Ip address at: http://127.0.0.18:8000" category=Consumer component=NWDAF
+time="2025-02-19T09:07:27+04:00" level=info msg="AMF subscription successful. Subscription ID: 3" category=Consumer component=NWDAF
+time="2025-02-19T09:07:27+04:00" level=info msg="Notify ID is: dcc37c49-a157-4ef2-9837-62554dfdc884" category=Consumer component=NWDAF
+time="2025-02-19T09:07:27+04:00" level=info msg="SMF IP address at: http://127.0.0.2:8000" category=Consumer component=NWDAF
+time="2025-02-19T09:07:27+04:00" level=info msg="SMF subscription successful. Subscription ID: 3" category=Consumer component=NWDAF
+time="2025-02-19T09:08:17+04:00" level=info msg=nwdaf category=App component=NWDAF
+time="2025-02-19T09:08:17+04:00" level=info msg="NWDAF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.21.8 linux/amd64" category=App component=NWDAF
+time="2025-02-19T09:08:17+04:00" level=info msg="Read config from [./nwdafcfg.yaml]" category=CFG component=NWDAF
+time="2025-02-19T09:08:17+04:00" level=info msg="nwdafconfig Info: Version[1.0.1] Description[NWDAF instance for 5G core network analytics]" category=CTX component=NWDAF
+time="2025-02-19T10:58:17+04:00" level=info msg="Successfully unsubscribed from AMF events. Subscription ID: 3" category=Consumer component=NWDAF
+time="2025-02-19T10:58:17+04:00" level=info msg="Successfully unsubscribed from SMF events. Subscription ID: 3" category=Consumer component=NWDAF
+time="2025-02-19T10:58:17+04:00" level=info msg="Send Deregister NFInstance" category=Consumer component=NWDAF

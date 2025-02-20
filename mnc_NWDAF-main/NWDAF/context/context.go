@@ -19,6 +19,7 @@ import (
 func init() {
 	nwdafContext.NfInstanceID = uuid.New().String()
 	nwdafContext.NfId = nwdafContext.NfInstanceID
+	nwdafContext.Subscriptions = make(map[string]string)
 }
 
 var nwdafContext NWDAFContext
@@ -51,6 +52,7 @@ type NWDAFContext struct {
 	NFManagementClient             *Nnrf_NFManagement.APIClient
 	NFDiscoveryClient              *Nnrf_NFDiscovery.APIClient
 	SubscriberDataManagementClient *Nudm_SubscriberDataManagement.APIClient
+	Subscriptions                  map[string]string
 }
 
 // RetrieveDnnInformation gets the corresponding dnn info from S-NSSAI and DNN
@@ -105,7 +107,6 @@ func InitNwdafContext(config *factory.Config) {
 		logger.CtxLog.Warn("NRF Uri is empty! Using localhost as NRF IPv4 address.")
 		nwdafContext.NrfUri = fmt.Sprintf("%s://%s:%d", nwdafContext.URIScheme, "127.0.0.1", 29510)
 	}
-
 	// SetupNFProfile(config)
 }
 

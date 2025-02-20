@@ -34,6 +34,10 @@ var (
 )
 
 func SubscribeToSMFEvents(nwdafCtx *nwdaf_context.NWDAFContext, profile models.NfProfile) (string, error) {
+	// check if already subscribed
+	if nwdafCtx.Subscriptions["smf"] != "" {
+		return "already subscribed to the SMF", nil
+	}
 	// Load dynamic subscription config
 	config, err := factory.LoadSubscriptionConfig("nwdaf_subscriptions.yaml")
 	if err != nil {
@@ -95,7 +99,7 @@ func SubscribeToSMFEvents(nwdafCtx *nwdaf_context.NWDAFContext, profile models.N
 		logger.ConsumerLog.Errorf("SMF subscription failed with status: %d", httpResp.StatusCode)
 		return "", fmt.Errorf("unexpected status code: %d", httpResp.StatusCode)
 	}
-
+	nwdafCtx.Subscriptions["smf"] = resp.SubId
 	logger.ConsumerLog.Infof("SMF subscription successful. Subscription ID: %s", resp.SubId)
 	return resp.SubId, nil
 }
@@ -148,6 +152,12 @@ func HandleSMFEvents(c *gin.Context) {
 }
 
 func UnsubscribeFromSMF_events(nwdafCtx *nwdaf_context.NWDAFContext, subscriptionId string, smfProfile models.NfProfile) error {
+
+	// check if there is no subscription
+	if nwdafCtx.Subscriptions["smf"] == "" {
+		return fmt.Errorf("no subscription to SMF")
+	}
+	subscriptionId = nwdafCtx.Subscriptions["smf"]
 	if subscriptionId == "" {
 		return fmt.Errorf("invalid subscription ID")
 	}
@@ -180,7 +190,7 @@ func UnsubscribeFromSMF_events(nwdafCtx *nwdaf_context.NWDAFContext, subscriptio
 	if httpResp.StatusCode != http.StatusOK {
 		return fmt.Errorf("unexpected status code on unsubscribe: %d", httpResp.StatusCode)
 	}
-
-	logger.ConsumerLog.Infof("Successfully unsubscribed from SMF events. Subscription ID: %s", subscriptionId)
+	delete(nwdafCtx.Subscriptions, "smf")
+	logger.ConsumerLog.Infof("Successfully unsubscribed from SMF events. Subscription ID was: %s", subscriptionId)
 	return nil
 }

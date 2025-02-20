@@ -44,6 +44,22 @@ func main() {
 			Name:  "log, l",
 			Usage: "Output NF log to `FILE`",
 		},
+		// cli.BoolFlag{
+		// 	Name:  "subscribe-amf",
+		// 	Usage: "Subscribe to AMF events",
+		// },
+		// cli.BoolFlag{
+		// 	Name:  "unsubscribe-amf",
+		// 	Usage: "Unsubscribe from AMF events",
+		// },
+		// cli.BoolFlag{
+		// 	Name:  "subscribe-smf",
+		// 	Usage: "Subscribe to SMF events",
+		// },
+		// cli.BoolFlag{
+		// 	Name:  "unsubscribe-smf",
+		// 	Usage: "Unsubscribe from SMF events",
+		// },
 	}
 	if err := app.Run(os.Args); err != nil {
 		appLog.Errorf("NWDAF Run error: %v", err)
@@ -78,6 +94,12 @@ func action(c *cli.Context) error {
 		return err
 	}
 	NWDAF = nwdaf
+
+	// // Check CLI commands
+	// if c.Bool("subscribe-amf") || c.Bool("unsubscribe-amf") || c.Bool("subscribe-smf") || c.Bool("unsubscribe-smf") {
+	// 	handleSubscriptionCommands(c)
+	// }
+
 	nwdaf.Start()
 
 	return nil

@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/free5gc/openapi"
+	"github.com/free5gc/openapi/Nnrf_NFDiscovery"
 	"github.com/free5gc/openapi/Nnrf_NFManagement"
 	"github.com/free5gc/openapi/models"
 	nwdaf_context "nwdaf.com/context"
@@ -146,4 +147,31 @@ func SendDeregisterNFInstance() (problemDetails *models.ProblemDetails, err erro
 		err = openapi.ReportError("server no response")
 	}
 	return
+}
+func QueryNRFForNF(nwdafCtx *nwdaf_context.NWDAFContext, NFType models.NfType) (*models.SearchResult, error) {
+	nrfUri := nwdafCtx.NrfUri
+
+	configuration := Nnrf_NFDiscovery.NewConfiguration()
+	configuration.SetBasePath(nrfUri)
+	client := Nnrf_NFDiscovery.NewAPIClient(configuration)
+	ctx, _, err := nwdafCtx.GetTokenCtx(models.ServiceName_NNRF_DISC, models.NfType_NRF)
+	if err != nil {
+		return nil, err
+	}
+	result, res, err := client.NFInstancesStoreApi.SearchNFInstances(ctx, NFType, models.NfType_NWDAF, nil)
+	if res != nil && res.StatusCode == http.StatusTemporaryRedirect {
+		return nil, fmt.Errorf("temporary Redirect For Non NRF Consumer")
+	}
+	if res == nil || res.Body == nil {
+		return &result, err
+	}
+	defer func() {
+		if res != nil {
+			if bodyCloseErr := res.Body.Close(); bodyCloseErr != nil {
+				err = fmt.Errorf("SearchNFInstances' response body cannot close: %+w", bodyCloseErr)
+			}
+		}
+	}()
+	return &result, err
+
 }
