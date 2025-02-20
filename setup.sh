@@ -89,7 +89,7 @@ sudo cmake --install .
 # Install UERANSIM
 echo "🛠️ Installing UERANSIM..."
 cd ~/testbed/UERANSIM
-git checkout e4c492d
+# git checkout e4c492d
 make  # Make sure Prometheus C++ is installed first
 
 # Install Prometheus
