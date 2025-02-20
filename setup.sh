@@ -53,11 +53,13 @@ read -p ""
 # Install Free5GC
 echo "🛠️ Installing Free5GC..."
 cd free5gc
+rmdir gtp5g
 make
 make webconsole
 
 # Install GTP5G
 echo "🛠️ Installing GTP5G..."
+git clone -b v0.8.7 https://github.com/free5gc/gtp5g.git
 cd gtp5g
 make
 sudo make install
