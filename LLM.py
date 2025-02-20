@@ -3,9 +3,13 @@ import sys
 import requests
 from openai import OpenAI
 from prom_query import query_prometheus
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+api_key = os.getenv('API_KEY')
 # Your OpenAI API key and client setup
-api_key = "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"
+# api_key = "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"
 client = OpenAI(api_key=api_key)
 
 # Function spec for querying Prometheus (analytics)
