@@ -1,3 +1,4 @@
+from datetime import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -202,5 +203,11 @@ def animate_cell_mobility(df, resolution=10, interval=200):
 # Assuming df_location is your DataFrame with the columns: time, NrCellId, supi, tac.
 # For example:
 if __name__ == '__main__':
-    df_location = pd.read_csv('/home/henokbfg/df_location.csv')#, sep='\t')
-    animate_cell_mobility(df_location, resolution=10, interval=200)
+    df_location = pd.read_csv('df_location.csv')
+    df_location['time'] = pd.to_datetime(df_location['time'])
+    start_time = datetime(2025, 2, 4, 10, 30, 45)
+    end_time = datetime(2025, 2, 4, 20, 30, 45)
+
+    # Filter the DataFrame
+    df_location = df_location[(df_location['time'] >= start_time) & (df_location['time'] <= end_time)]
+    animate_cell_mobility(df_location, resolution=10, interval=10)

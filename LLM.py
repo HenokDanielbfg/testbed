@@ -114,6 +114,7 @@ def run_llm_conversation(user_message):
         if function_name == "query_prometheus":
             try:
                 prom_result = query_prometheus(**function_args)
+                # print(prom_result)
                 messages.append(response_message)
                 messages.append({
                     "role": "function",
@@ -132,6 +133,8 @@ def run_llm_conversation(user_message):
                     "content": json.dumps({"error": str(e), "status": "failed"})
                 }
                 messages.append(response_message)
+                # print(response_message)
+                # print(error_message)
                 messages.append(error_message)
                 error_response = client.chat.completions.create(
                     model="gpt-4o",

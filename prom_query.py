@@ -245,7 +245,7 @@ def get_df_destination(start_time=None, end_time=None):
     # Reset index after sorting
     df = df.reset_index(drop=True)
     
-    return df
+    return df.to_json()
 
 
 def get_df_active(start_time=None, end_time=None):
@@ -281,9 +281,9 @@ def get_df_active(start_time=None, end_time=None):
         df['timestamp'] = df['timestamp'] + pd.Timedelta(hours=4)
         df['timestamp'] = df['timestamp'].dt.strftime('%Y-%m-%d %H:%M:%S')
 
-        return df
+        return df.to_json()
     else:
-        return pd.DataFrame(columns=['timestamp', 'active_UEs'])
+        return pd.DataFrame(columns=['timestamp', 'active_UEs']).to_json()
 
 def get_reg(start_time=None, end_time=None):
     
@@ -342,12 +342,12 @@ def get_reg(start_time=None, end_time=None):
         final_df = final_df.reset_index(drop=True)
         df['timestamp'] = df['timestamp'].dt.strftime('%Y-%m-%d %H:%M:%S')
 
-        return final_df
+        return final_df.to_json()
     else:
-        return pd.DataFrame(columns=['timestamp', 'supi', 'state', 'state_desc', 'duration_minutes'])
+        return pd.DataFrame(columns=['timestamp', 'supi', 'state', 'state_desc', 'duration_minutes']).to_json()
 
 
 if __name__ == "__main__":
-    print(query_prometheus('UE_location_report'))
+    print(query_prometheus('active_UEs'))
     # query_prometheus('amf_ue_registration_state')
 

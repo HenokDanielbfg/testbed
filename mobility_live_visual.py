@@ -210,8 +210,7 @@ def animate_mobility(df, start_time, end_time, resolution=60, interval=50, custo
 
 
 if __name__ == '__main__':
-    df_loc_des = pd.read_csv('/home/henokbfg/df_loc_des.csv')
-    df_location = pd.read_csv('/home/henokbfg/df_location.csv')
+    df_loc_des = pd.read_csv('df_loc_des.csv')
     # df_loc_des = df_loc_des[df_loc_des['supi']==208930000000004]
     custom_locations = {
         (208930000000001, 'home'): (90, 90),
@@ -223,7 +222,7 @@ if __name__ == '__main__':
         (208930000000004, 'home'): (60, 60),
         (208930000000004, 'work'): (45, 45)
     }
-    animate_mobility(df_loc_des, "2025-02-06 10:00:00", "2025-02-07 06:00:00", custom_locations=custom_locations)
+    animate_mobility(df_loc_des, "2025-02-07 10:00:00", "2025-02-07 20:00:00", custom_locations=custom_locations)
 
 
 
