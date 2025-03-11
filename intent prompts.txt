@@ -1,0 +1,1063 @@
+## AMF Subscribe
+1. Subscribe NWDAF to AMF events
+2. Enable AMF event subscription for NWDAF
+3. Start monitoring AMF events
+4. Set up AMF event subscription
+5. Initialize AMF event monitoring
+6. Begin tracking AMF events
+7. Create new AMF event subscription
+8. Activate AMF event notifications
+9. Register NWDAF for AMF events
+10. Turn on AMF event subscription
+11. Subscribe to Access and Mobility Management Function events
+12. I want to monitor AMF events
+13. Please start AMF event subscription
+14. Can you enable AMF monitoring?
+15. Set up NWDAF to receive AMF events
+16. Establish AMF event subscription
+17. Initiate AMF event tracking
+18. Configure NWDAF for AMF subscription
+19. Launch AMF event notification service
+20. Begin AMF event subscription
+21. Enable NWDAF to receive AMF notifications
+22. Start AMF event subscription process
+23. Activate NWDAF's AMF monitoring capability
+24. Subscribe to all AMF events
+25. I need NWDAF to monitor AMF
+26. Set up AMF event notifications
+27. Create AMF subscription for NWDAF
+28. Enable AMF event tracking
+29. Start receiving AMF events
+30. Initialize NWDAF AMF subscription
+31. Activate subscription to AMF events
+32. Begin monitoring Access and Mobility Management Function
+33. Set up NWDAF to track AMF events
+34. Enable notification service for AMF
+35. Start AMF event monitoring system
+36. Initiate AMF subscription process
+37. Register for AMF event notifications
+38. Configure AMF event subscription settings
+39. Activate AMF event monitoring functions
+40. Begin subscribing to AMF events
+41. Generate AMF subscription for network monitoring
+42. Please subscribe to AMF notifications
+43. I want NWDAF to start monitoring AMF events
+44. Enable real-time AMF event tracking
+45. Set up continuous AMF monitoring
+46. Initiate AMF event notification subscription
+47. Start tracking Access and Mobility Management events
+48. Subscribe NWDAF to receive AMF updates
+49. Activate AMF monitoring for network analytics
+50. Create new subscription for AMF event data
+51. Set up NWDAF to collect AMF events
+52. Enable AMF event collection
+53. Begin AMF event subscription service
+54. Initiate NWDAF subscription to AMF
+55. Can you start AMF event monitoring?
+56. Register NWDAF as an AMF event subscriber
+57. Subscribe to Access and Mobility Management notifications
+58. Start gathering AMF event data
+59. Set up NWDAF to listen for AMF events
+60. Create AMF event monitoring subscription
+61. Turn on AMF event notification reception
+62. Activate NWDAF's AMF subscription capability
+63. Begin recording AMF events
+64. Enable NWDAF to detect AMF events
+65. Start subscription for AMF events
+66. Initiate continuous AMF monitoring
+67. Set up event streaming from AMF
+68. Enable NWDAF's AMF event collection
+69. Begin AMF notification subscription
+70. Start NWDAF AMF event monitoring
+71. I need to subscribe to AMF events
+72. Enable AMF data collection for NWDAF
+73. Start subscription service for AMF events
+74. Configure NWDAF to receive AMF notifications
+75. Begin AMF event subscription setup
+76. Enable AMF event reception
+77. Create AMF notification subscription
+78. Activate AMF event collection system
+79. Start monitoring Access and Mobility Management
+80. Set up NWDAF to subscribe to AMF events
+81. Initialize AMF event notification process
+82. Begin tracking Access and Mobility events
+83. Create subscription for AMF notifications
+84. Subscribe to AMF status updates
+85. Start monitoring AMF activity
+86. Enable AMF event subscription service
+87. Begin collecting AMF event data
+88. Set up NWDAF to monitor Access and Mobility Management
+89. Activate AMF notification reception
+90. Initialize AMF event subscription service
+91. Start NWDAF's AMF monitoring capability
+92. Create subscription to track AMF events
+93. Enable continuous AMF event data collection
+94. Begin AMF event monitoring process
+95. Setup NWDAF to capture AMF events
+96. Start subscription for AMF notifications
+97. Enable NWDAF to monitor Access and Mobility Functions
+98. Begin collecting AMF notification data
+99. Create AMF event capture subscription
+100. Activate AMF event subscription feature
+101. Start NWDAF subscription to AMF events
+102. Initialize AMF event monitoring service
+103. Begin tracking AMF notifications
+104. Set up NWDAF to receive AMF updates
+105. Enable AMF event data subscription
+106. Start monitoring Access and Mobility Management Function events
+107. Create NWDAF subscription for AMF notifications
+108. Enable AMF event tracking service
+109. Begin receiving AMF event data
+110. Initiate AMF notification subscription process
+111. Set up NWDAF to subscribe to Access and Mobility Management
+112. Start AMF event capturing
+113. Enable subscription to AMF notifications
+114. Begin AMF event data collection
+115. Activate NWDAF's AMF event monitoring
+116. Start tracking AMF status updates
+117. Initialize subscription for AMF events
+118. Begin AMF monitoring process
+119. Set up NWDAF to listen for Access and Mobility events
+120. Enable AMF notification collection
+121. Start subscribing to AMF event updates
+122. Create NWDAF subscription for AMF monitoring
+123. Activate Access and Mobility Management event subscription
+124. Begin tracking AMF event notifications
+125. Enable NWDAF to subscribe to AMF status
+126. Start AMF notification monitoring
+127. Set up continuous AMF event subscription
+128. Initialize NWDAF's AMF monitoring service
+129. Begin subscription to Access and Mobility events
+130. Enable AMF event detection
+131. Start NWDAF AMF notification subscription
+132. Create continuous AMF event monitoring
+133. Begin collecting Access and Mobility event data
+134. Enable NWDAF to track AMF notifications
+135. Start AMF event subscription system
+136. Initiate NWDAF's AMF monitoring capability
+137. Subscribe to real-time AMF events
+138. Enable AMF notification tracking
+139. Begin NWDAF subscription to Access and Mobility events
+140. Start capturing AMF event data
+141. Set up NWDAF to monitor AMF status
+142. Enable Access and Mobility event subscription
+143. Begin AMF notification collection
+144. Create NWDAF subscription for AMF event tracking
+145. Start monitoring AMF event stream
+146. Enable NWDAF to receive Access and Mobility notifications
+147. Begin AMF status monitoring
+148. Set up NWDAF subscription to AMF events
+149. Activate continuous AMF event subscription
+150. Start NWDAF tracking of AMF events
+
+## AMF Unsubscribe
+1. Unsubscribe NWDAF from AMF events
+2. Disable AMF event subscription for NWDAF
+3. Stop monitoring AMF events
+4. Remove AMF event subscription
+5. Terminate AMF event monitoring
+6. End tracking of AMF events
+7. Delete AMF event subscription
+8. Deactivate AMF event notifications
+9. Unregister NWDAF from AMF events
+10. Turn off AMF event subscription
+11. Unsubscribe from Access and Mobility Management Function events
+12. I want to stop monitoring AMF events
+13. Please end AMF event subscription
+14. Can you disable AMF monitoring?
+15. Remove NWDAF from receiving AMF events
+16. Terminate AMF event subscription
+17. Stop AMF event tracking
+18. Discontinue NWDAF's AMF subscription
+19. End AMF event notification service
+20. Cease AMF event subscription
+21. Disable NWDAF from receiving AMF notifications
+22. Stop AMF event subscription process
+23. Deactivate NWDAF's AMF monitoring capability
+24. Unsubscribe from all AMF events
+25. I need NWDAF to stop monitoring AMF
+26. End AMF event notifications
+27. Delete AMF subscription for NWDAF
+28. Disable AMF event tracking
+29. Stop receiving AMF events
+30. Terminate NWDAF AMF subscription
+31. Deactivate subscription to AMF events
+32. Stop monitoring Access and Mobility Management Function
+33. Remove NWDAF tracking of AMF events
+34. Disable notification service for AMF
+35. End AMF event monitoring system
+36. Terminate AMF subscription process
+37. Unregister from AMF event notifications
+38. Clear AMF event subscription settings
+39. Deactivate AMF event monitoring functions
+40. Stop subscribing to AMF events
+41. Remove AMF subscription for network monitoring
+42. Please unsubscribe from AMF notifications
+43. I want NWDAF to stop monitoring AMF events
+44. Disable real-time AMF event tracking
+45. End continuous AMF monitoring
+46. Terminate AMF event notification subscription
+47. Stop tracking Access and Mobility Management events
+48. Unsubscribe NWDAF from receiving AMF updates
+49. Deactivate AMF monitoring for network analytics
+50. Delete subscription for AMF event data
+51. Remove NWDAF from collecting AMF events
+52. Disable AMF event collection
+53. End AMF event subscription service
+54. Terminate NWDAF subscription to AMF
+55. Can you stop AMF event monitoring?
+56. Unregister NWDAF as an AMF event subscriber
+57. Unsubscribe from Access and Mobility Management notifications
+58. Stop gathering AMF event data
+59. Remove NWDAF from listening for AMF events
+60. Delete AMF event monitoring subscription
+61. Turn off AMF event notification reception
+62. Deactivate NWDAF's AMF subscription capability
+63. Stop recording AMF events
+64. Disable NWDAF from detecting AMF events
+65. End subscription for AMF events
+66. Terminate continuous AMF monitoring
+67. Stop event streaming from AMF
+68. Disable NWDAF's AMF event collection
+69. End AMF notification subscription
+70. Stop NWDAF AMF event monitoring
+71. I need to unsubscribe from AMF events
+72. Disable AMF data collection for NWDAF
+73. End subscription service for AMF events
+74. Remove NWDAF from receiving AMF notifications
+75. Terminate AMF event subscription setup
+76. Disable AMF event reception
+77. Delete AMF notification subscription
+78. Deactivate AMF event collection system
+79. Stop monitoring Access and Mobility Management
+80. Remove NWDAF subscription to AMF events
+81. Terminate AMF event notification process
+82. Stop tracking Access and Mobility events
+83. Delete subscription for AMF notifications
+84. Unsubscribe from AMF status updates
+85. Stop monitoring AMF activity
+86. Disable AMF event subscription service
+87. Stop collecting AMF event data
+88. Remove NWDAF monitoring of Access and Mobility Management
+89. Deactivate AMF notification reception
+90. Terminate AMF event subscription service
+91. Stop NWDAF's AMF monitoring capability
+92. Delete subscription tracking AMF events
+93. Disable continuous AMF event data collection
+94. End AMF event monitoring process
+95. Remove NWDAF capturing of AMF events
+96. End subscription for AMF notifications
+97. Disable NWDAF monitoring of Access and Mobility Functions
+98. Stop collecting AMF notification data
+99. Delete AMF event capture subscription
+100. Deactivate AMF event subscription feature
+101. End NWDAF subscription to AMF events
+102. Terminate AMF event monitoring service
+103. Stop tracking AMF notifications
+104. Remove NWDAF from receiving AMF updates
+105. Disable AMF event data subscription
+106. Stop monitoring Access and Mobility Management Function events
+107. Delete NWDAF subscription for AMF notifications
+108. Disable AMF event tracking service
+109. Stop receiving AMF event data
+110. Terminate AMF notification subscription process
+111. Remove NWDAF subscription to Access and Mobility Management
+112. End AMF event capturing
+113. Disable subscription to AMF notifications
+114. Stop AMF event data collection
+115. Deactivate NWDAF's AMF event monitoring
+116. End tracking of AMF status updates
+117. Terminate subscription for AMF events
+118. Stop AMF monitoring process
+119. Remove NWDAF from listening for Access and Mobility events
+120. Disable AMF notification collection
+121. Stop subscribing to AMF event updates
+122. Delete NWDAF subscription for AMF monitoring
+123. Deactivate Access and Mobility Management event subscription
+124. End tracking of AMF event notifications
+125. Disable NWDAF subscription to AMF status
+126. Stop AMF notification monitoring
+127. End continuous AMF event subscription
+128. Terminate NWDAF's AMF monitoring service
+129. Stop subscription to Access and Mobility events
+130. Disable AMF event detection
+131. End NWDAF AMF notification subscription
+132. Delete continuous AMF event monitoring
+133. Stop collecting Access and Mobility event data
+134. Disable NWDAF tracking of AMF notifications
+135. End AMF event subscription system
+136. Terminate NWDAF's AMF monitoring capability
+137. Unsubscribe from real-time AMF events
+138. Disable AMF notification tracking
+139. End NWDAF subscription to Access and Mobility events
+140. Stop capturing AMF event data
+141. Remove NWDAF monitoring of AMF status
+142. Disable Access and Mobility event subscription
+143. Stop AMF notification collection
+144. Delete NWDAF subscription for AMF event tracking
+145. End monitoring of AMF event stream
+146. Disable NWDAF from receiving Access and Mobility notifications
+147. Stop AMF status monitoring
+148. Remove NWDAF subscription to AMF events
+149. Deactivate continuous AMF event subscription
+150. End NWDAF tracking of AMF events
+
+## SMF Subscribe
+1. Subscribe NWDAF to SMF events
+2. Enable SMF event subscription for NWDAF
+3. Start monitoring SMF events
+4. Set up SMF event subscription
+5. Initialize SMF event monitoring
+6. Begin tracking SMF events
+7. Create new SMF event subscription
+8. Activate SMF event notifications
+9. Register NWDAF for SMF events
+10. Turn on SMF event subscription
+11. Subscribe to Session Management Function events
+12. I want to monitor SMF events
+13. Please start SMF event subscription
+14. Can you enable SMF monitoring?
+15. Set up NWDAF to receive SMF events
+16. Establish SMF event subscription
+17. Initiate SMF event tracking
+18. Configure NWDAF for SMF subscription
+19. Launch SMF event notification service
+20. Begin SMF event subscription
+21. Enable NWDAF to receive SMF notifications
+22. Start SMF event subscription process
+23. Activate NWDAF's SMF monitoring capability
+24. Subscribe to all SMF events
+25. I need NWDAF to monitor SMF
+26. Set up SMF event notifications
+27. Create SMF subscription for NWDAF
+28. Enable SMF event tracking
+29. Start receiving SMF events
+30. Initialize NWDAF SMF subscription
+31. Activate subscription to SMF events
+32. Begin monitoring Session Management Function
+33. Set up NWDAF to track SMF events
+34. Enable notification service for SMF
+35. Start SMF event monitoring system
+36. Initiate SMF subscription process
+37. Register for SMF event notifications
+38. Configure SMF event subscription settings
+39. Activate SMF event monitoring functions
+40. Begin subscribing to SMF events
+41. Generate SMF subscription for network monitoring
+42. Please subscribe to SMF notifications
+43. I want NWDAF to start monitoring SMF events
+44. Enable real-time SMF event tracking
+45. Set up continuous SMF monitoring
+46. Initiate SMF event notification subscription
+47. Start tracking Session Management events
+48. Subscribe NWDAF to receive SMF updates
+49. Activate SMF monitoring for network analytics
+50. Create new subscription for SMF event data
+51. Set up NWDAF to collect SMF events
+52. Enable SMF event collection
+53. Begin SMF event subscription service
+54. Initiate NWDAF subscription to SMF
+55. Can you start SMF event monitoring?
+56. Register NWDAF as an SMF event subscriber
+57. Subscribe to Session Management notifications
+58. Start gathering SMF event data
+59. Set up NWDAF to listen for SMF events
+60. Create SMF event monitoring subscription
+61. Turn on SMF event notification reception
+62. Activate NWDAF's SMF subscription capability
+63. Begin recording SMF events
+64. Enable NWDAF to detect SMF events
+65. Start subscription for SMF events
+66. Initiate continuous SMF monitoring
+67. Set up event streaming from SMF
+68. Enable NWDAF's SMF event collection
+69. Begin SMF notification subscription
+70. Start NWDAF SMF event monitoring
+71. I need to subscribe to SMF events
+72. Enable SMF data collection for NWDAF
+73. Start subscription service for SMF events
+74. Configure NWDAF to receive SMF notifications
+75. Begin SMF event subscription setup
+76. Enable SMF event reception
+77. Create SMF notification subscription
+78. Activate SMF event collection system
+79. Start monitoring Session Management
+80. Set up NWDAF to subscribe to SMF events
+81. Initialize SMF event notification process
+82. Begin tracking Session Management events
+83. Create subscription for SMF notifications
+84. Subscribe to SMF status updates
+85. Start monitoring SMF activity
+86. Enable SMF event subscription service
+87. Begin collecting SMF event data
+88. Set up NWDAF to monitor Session Management
+89. Activate SMF notification reception
+90. Initialize SMF event subscription service
+91. Start NWDAF's SMF monitoring capability
+92. Create subscription to track SMF events
+93. Enable continuous SMF event data collection
+94. Begin SMF event monitoring process
+95. Setup NWDAF to capture SMF events
+96. Start subscription for SMF notifications
+97. Enable NWDAF to monitor Session Management Functions
+98. Begin collecting SMF notification data
+99. Create SMF event capture subscription
+100. Activate SMF event subscription feature
+101. Start NWDAF subscription to SMF events
+102. Initialize SMF event monitoring service
+103. Begin tracking SMF notifications
+104. Set up NWDAF to receive SMF updates
+105. Enable SMF event data subscription
+106. Start monitoring Session Management Function events
+107. Create NWDAF subscription for SMF notifications
+108. Enable SMF event tracking service
+109. Begin receiving SMF event data
+110. Initiate SMF notification subscription process
+111. Set up NWDAF to subscribe to Session Management
+112. Start SMF event capturing
+113. Enable subscription to SMF notifications
+114. Begin SMF event data collection
+115. Activate NWDAF's SMF event monitoring
+116. Start tracking SMF status updates
+117. Initialize subscription for SMF events
+118. Begin SMF monitoring process
+119. Set up NWDAF to listen for Session Management events
+120. Enable SMF notification collection
+121. Start subscribing to SMF event updates
+122. Create NWDAF subscription for SMF monitoring
+123. Activate Session Management event subscription
+124. Begin tracking SMF event notifications
+125. Enable NWDAF to subscribe to SMF status
+126. Start SMF notification monitoring
+127. Set up continuous SMF event subscription
+128. Initialize NWDAF's SMF monitoring service
+129. Begin subscription to Session Management events
+130. Enable SMF event detection
+131. Start NWDAF SMF notification subscription
+132. Create continuous SMF event monitoring
+133. Begin collecting Session Management event data
+134. Enable NWDAF to track SMF notifications
+135. Start SMF event subscription system
+136. Initiate NWDAF's SMF monitoring capability
+137. Subscribe to real-time SMF events
+138. Enable SMF notification tracking
+139. Begin NWDAF subscription to Session Management events
+140. Start capturing SMF event data
+141. Set up NWDAF to monitor SMF status
+142. Enable Session Management event subscription
+143. Begin SMF notification collection
+144. Create NWDAF subscription for SMF event tracking
+145. Start monitoring SMF event stream
+146. Enable NWDAF to receive Session Management notifications
+147. Begin SMF status monitoring
+148. Set up NWDAF subscription to SMF events
+149. Activate continuous SMF event subscription
+150. Start NWDAF tracking of SMF events
+
+## SMF Unsubscribe
+1. Unsubscribe NWDAF from SMF events
+2. Disable SMF event subscription for NWDAF
+3. Stop monitoring SMF events
+4. Remove SMF event subscription
+5. Terminate SMF event monitoring
+6. End tracking of SMF events
+7. Delete SMF event subscription
+8. Deactivate SMF event notifications
+9. Unregister NWDAF from SMF events
+10. Turn off SMF event subscription
+11. Unsubscribe from Session Management Function events
+12. I want to stop monitoring SMF events
+13. Please end SMF event subscription
+14. Can you disable SMF monitoring?
+15. Remove NWDAF from receiving SMF events
+16. Terminate SMF event subscription
+17. Stop SMF event tracking
+18. Discontinue NWDAF's SMF subscription
+19. End SMF event notification service
+20. Cease SMF event subscription
+21. Disable NWDAF from receiving SMF notifications
+22. Stop SMF event subscription process
+23. Deactivate NWDAF's SMF monitoring capability
+24. Unsubscribe from all SMF events
+25. I need NWDAF to stop monitoring SMF
+26. End SMF event notifications
+27. Delete SMF subscription for NWDAF
+28. Disable SMF event tracking
+29. Stop receiving SMF events
+30. Terminate NWDAF SMF subscription
+31. Deactivate subscription to SMF events
+32. Stop monitoring Session Management Function
+33. Remove NWDAF tracking of SMF events
+34. Disable notification service for SMF
+35. End SMF event monitoring system
+36. Terminate SMF subscription process
+37. Unregister from SMF event notifications
+38. Clear SMF event subscription settings
+39. Deactivate SMF event monitoring functions
+40. Stop subscribing to SMF events
+41. Remove SMF subscription for network monitoring
+42. Please unsubscribe from SMF notifications
+43. I want NWDAF to stop monitoring SMF events
+44. Disable real-time SMF event tracking
+45. End continuous SMF monitoring
+46. Terminate SMF event notification subscription
+47. Stop tracking Session Management events
+48. Unsubscribe NWDAF from receiving SMF updates
+49. Deactivate SMF monitoring for network analytics
+50. Delete subscription for SMF event data
+51. Remove NWDAF from collecting SMF events
+52. Disable SMF event collection
+53. End SMF event subscription service
+54. Terminate NWDAF subscription to SMF
+55. Can you stop SMF event monitoring?
+56. Unregister NWDAF as an SMF event subscriber
+57. Unsubscribe from Session Management notifications
+58. Stop gathering SMF event data
+59. Remove NWDAF from listening for SMF events
+60. Delete SMF event monitoring subscription
+61. Turn off SMF event notification reception
+62. Deactivate NWDAF's SMF subscription capability
+63. Stop recording SMF events
+64. Disable NWDAF from detecting SMF events
+65. End subscription for SMF events
+66. Terminate continuous SMF monitoring
+67. Stop event streaming from SMF
+68. Disable NWDAF's SMF event collection
+69. End SMF notification subscription
+70. Stop NWDAF SMF event monitoring
+71. I need to unsubscribe from SMF events
+72. Disable SMF data collection for NWDAF
+73. End subscription service for SMF events
+74. Remove NWDAF from receiving SMF notifications
+75. Terminate SMF event subscription setup
+76. Disable SMF event reception
+77. Delete SMF notification subscription
+78. Deactivate SMF event collection system
+79. Stop monitoring Session Management
+80. Remove NWDAF subscription to SMF events
+81. Terminate SMF event notification process
+82. Stop tracking Session Management events
+83. Delete subscription for SMF notifications
+84. Unsubscribe from SMF status updates
+85. Stop monitoring SMF activity
+86. Disable SMF event subscription service
+87. Stop collecting SMF event data
+88. Remove NWDAF monitoring of Session Management
+89. Deactivate SMF notification reception
+90. Terminate SMF event subscription service
+91. Stop NWDAF's SMF monitoring capability
+92. Delete subscription tracking SMF events
+93. Disable continuous SMF event data collection
+94. End SMF event monitoring process
+95. Remove NWDAF capturing of SMF events
+96. End subscription for SMF notifications
+97. Disable NWDAF monitoring of Session Management Functions
+98. Stop collecting SMF notification data
+99. Delete SMF event capture subscription
+100. Deactivate SMF event subscription feature
+101. End NWDAF subscription to SMF events
+102. Terminate SMF event monitoring service
+103. Stop tracking SMF notifications
+104. Remove NWDAF from receiving SMF updates
+105. Disable SMF event data subscription
+106. Stop monitoring Session Management Function events
+107. Delete NWDAF subscription for SMF notifications
+108. Disable SMF event tracking service
+109. Stop receiving SMF event data
+110. Terminate SMF notification subscription process
+111. Remove NWDAF subscription to Session Management
+112. End SMF event capturing
+113. Disable subscription to SMF notifications
+114. Stop SMF event data collection
+115. Deactivate NWDAF's SMF event monitoring
+116. End tracking of SMF status updates
+117. Terminate subscription for SMF events
+118. Stop SMF monitoring process
+119. Remove NWDAF from listening for Session Management events
+120. Disable SMF notification collection
+121. Stop subscribing to SMF event updates
+122. Delete NWDAF subscription for SMF monitoring
+123. Deactivate Session Management event subscription
+124. End tracking of SMF event notifications
+125. Disable NWDAF subscription to SMF status
+126. Stop SMF notification monitoring
+127. End continuous SMF event subscription
+128. Terminate NWDAF's SMF monitoring service
+129. Stop subscription to Session Management events
+130. Disable SMF event detection
+131. End NWDAF SMF notification subscription
+132. Delete continuous SMF event monitoring
+133. Stop collecting Session Management event data
+134. Disable NWDAF tracking of SMF notifications
+135. End SMF event subscription system
+136. Terminate NWDAF's SMF monitoring capability
+137. Unsubscribe from real-time SMF events
+138. Disable SMF notification tracking
+139. End NWDAF subscription to Session Management events
+140. Stop capturing SMF event data
+141. Remove NWDAF monitoring of SMF status
+142. Disable Session Management event subscription
+143. Stop SMF notification collection
+144. Delete NWDAF subscription for SMF event tracking
+145. End monitoring of SMF event stream
+146. Disable NWDAF from receiving Session Management notifications
+147. Stop SMF status monitoring
+148. Remove NWDAF subscription to SMF events
+149. Deactivate continuous SMF event subscription
+150. End NWDAF tracking of SMF events
+
+## Active_UEs
+1. Show me active UE data
+2. Display active UE analytics
+3. Get Active_UEs metrics
+4. I need information on active UEs
+5. Retrieve active UE count from Prometheus
+6. Show active user equipment statistics
+7. Pull data on active UEs
+8. What are the current Active_UEs metrics?
+9. Display the active user count
+10. Get the number of active UEs
+11. Show me active UE metrics from Prometheus
+12. Retrieve df_active.csv data
+13. What's the active UE count right now?
+14. I need to see active UE trends
+15. Show me the active subscriber count
+16. Display active connection statistics
+17. Get me the active UE report
+18. How many UEs are currently active?
+19. Provide active UE metrics
+20. Show me current active UE data
+21. Can I see the Active_UEs analytics?
+22. Get data from Active UEs
+23. Show me active UE count over time
+24. What's the active UE status?
+25. I need Active_UEs metric analysis
+26. Show me active UE distribution
+27. Get me active UE statistics
+28. Display current active user equipment data
+29. Retrieve active UE metrics from Prometheus
+30. Show me the active UE count trend
+31. What's the active UE pattern?
+32. Get Active_UEs metrics from the last hour
+33. Display active UE analytics dashboard
+34. Show me active UEs from Active UEs metric
+35. I need to analyze active UE patterns
+36. Provide active user equipment counts
+37. Show me active UE metrics dashboard
+38. Get the active subscriber metrics
+39. What's the peak active UE count?
+40. Display active UE fluctuations
+41. Show me active UE analytics report
+42. Get current active UE metrics
+43. What's the active UE load?
+44. I need to see active UE distribution
+45. Display active UE density
+46. Show me Active_UEs from Prometheus
+47. Get activity data for UEs
+48. What's the active UE count by time?
+49. Show me UE activity metrics
+50. Retrieve active subscriber data
+51. Display active UE usage patterns
+52. Get me active user equipment metrics
+53. Show current active UE statistics
+54. What's the active UE trend?
+55. I need Active_UEs metric information
+56. Show me active UE count by day
+57. Get the active UE profile
+58. Display active subscriber statistics
+59. What's the active UE visualization?
+60. Show me active device metrics
+61. Get Active_UEs from df_active.csv
+62. Display active UE utilization data
+63. What's the active UE pattern lately?
+64. I need to visualize active UE metrics
+65. Show me active UE count history
+66. Get the active user metrics
+67. Display active UE analytics report
+68. What's the active UE data showing?
+69. Show me active UE metrics analysis
+70. Get the Active_UEs metric dashboard
+71. I need to check active UE trends
+72. Show me active subscriber metrics
+73. Display active UE count information
+74. What's the current active UE status?
+75. Show me active UE monitoring data
+76. Get historical active UE metrics
+77. Display active user equipment analysis
+78. What's the active UE count summary?
+79. I need to see active UE metrics from Prometheus
+80. Show me active UE distribution data
+81. Get the active subscriber count metrics
+82. Display active UE metrics visualization
+83. Show me active UE data from df_active.csv
+84. What are the current active UE statistics?
+85. I need to analyze active UE count trends
+86. Show me active UE usage patterns
+87. Get metrics for active user equipment
+88. Display active UE count by timestamp
+89. What's the active UE pattern over time?
+90. Show me active user data analysis
+91. Get active UE metrics visualization
+92. I need to see active UE count variations
+93. Show me active UE load metrics
+94. Display active subscriber data trends
+95. What's the active UE count per period?
+96. Show me active UE density metrics
+97. Get active UE analytics data
+98. Display active UE metrics dashboard
+99. What's the active UE usage pattern?
+100. I need to analyze active UE distribution
+101. Show me active user equipment count
+102. Get Active_UEs metric analysis
+103. Display active UE metrics report
+104. What's the active UE trend analysis?
+105. Show me active UE count data
+106. I need to see active subscriber metrics
+107. Get active UE analytics visualization
+108. Display active UE time series data
+109. What's the active UE count variation?
+110. Show me active UE metrics from df_active.csv
+111. Get active subscriber count data
+112. Display active UE metrics from Prometheus
+113. What's the active UE pattern analysis?
+114. I need to check active UE distribution
+115. Show me active UE usage statistics
+116. Get the active UE count metrics
+117. Display active UE analytics dashboard
+118. What's the active UE trend over time?
+119. Show me active UE data visualization
+120. Get active subscriber metrics analysis
+121. I need to see active UE metrics by time
+122. Display active UE count patterns
+123. What's the active UE utilization trend?
+124. Show me active UE metrics over time
+125. Get active UE count analytics
+126. Display active user equipment data analysis
+127. What's the active UE distribution pattern?
+128. I need to analyze active UE metrics
+129. Show me active UE count by period
+130. Get active UE statistics visualization
+131. Display active UE metrics analysis
+132. What's the active UE count by timestamp?
+133. Show me currently active devices
+134. Show me active subscriber count metrics
+135. Get active UE trend analysis
+136. Display active UE utilization metrics
+137. What's the active UE count by region?
+138. I need to see active UE analytics data
+139. Show me active UE metrics dashboard
+140. Get active user equipment statistics
+141. Display active UE count analytics
+142. What's the active UE pattern by time?
+143. Show me active UE data from Prometheus
+144. Get active subscriber metrics report
+145. I need to analyze active UE distribution
+146. Display active UE count visualization
+147. What's the active UE metrics showing?
+148. Show me active UE usage data
+149. Get the active UE metrics analysis
+150. Display active user equipment count trends
+
+## UE_location_report
+1. How many unique NrCellIds appear in the handover data?
+2. Which SUPI had the most handovers on 2025-02-03?
+3. What is the total number of handovers recorded for TAC 000001?
+4. Show me the handover count per hour on 2025-02-03
+5. Which NrCellId received the most handovers in the dataset?
+6. How many handovers occurred between 10:50 AM and 11:00 AM on 2025-02-03?
+7. What is the distribution of handovers across different TACs?
+8. Show me the SUPIs that experienced handovers to NrCellId 9548800000
+9. How many handovers happened for SUPI 602089300000000010000011?
+10. What's the most common TAC involved in handovers?
+11. Show me a timeline of all handovers for SUPI 602089300000000030000032
+12. Which time period had the highest handover frequency?
+13. How many distinct TACs appear in the handover data?
+14. What's the average time between consecutive handovers for the same SUPI?
+15. Show me all handovers involving NrCellId 1877410000000
+16. How many SUPIs experienced multiple handovers within a 5-minute window?
+17. What's the ratio of handovers across different NrCellIds?
+18. Show me the handover pattern for SUPI 602089300000000020000033
+19. How many handovers occurred to and from NrCellId 8508800000000?
+20. What is the time distribution of handovers throughout the day?
+21. Which SUPI had the shortest time between consecutive handovers?
+22. How many handovers were recorded for each TAC code?
+23. What's the handover frequency per minute on 2025-02-03?
+24. Show me all SUPIs that had handovers involving TAC 000004
+25. Which NrCellId was involved in the first handover of the dataset?
+26. How many handovers occurred for TAC 000002 versus TAC 000003?
+27. What's the most active minute for handovers in the dataset?
+28. Show me the distribution of SUPIs across different NrCellIds
+29. How many handovers happened after 10:55 AM on 2025-02-03?
+30. What's the correlation between NrCellIds and specific TACs?
+31. Show me all handovers for SUPI 602089300000000040000034
+32. Which combination of NrCellId and TAC has the most handovers?
+33. How many handovers occurred between 10:50:25 and 10:55:28?
+34. What's the average number of handovers per SUPI?
+35. Show me the NrCellIds associated with TAC 000001
+36. How many SUPIs had handovers within TAC 000003?
+37. What's the handover count trend over time on 2025-02-03?
+38. Show me the SUPIs that experienced handovers across multiple TACs
+39. Which TAC had the fewest handovers in the dataset?
+40. How many handovers occurred for each unique SUPI?
+41. What's the time interval between the first and last handover in the dataset?
+42. Show me all handovers involving NrCellId 9694981000000
+43. How many SUPIs had exactly one handover recorded?
+44. What's the distribution of handovers across different seconds within a minute?
+45. Show me the relationship between handover time and NrCellId
+46. Which SUPI had handovers to the most diverse set of NrCellIds?
+47. How many handovers were recorded for TAC 000005?
+48. What's the average handover rate per second in the dataset?
+49. Show me all SUPIs that had handovers to NrCellId 7578600000000
+50. Which handover had the highest millisecond timestamp precision?
+51. How many consecutive handovers occurred for SUPI 602089300000000010000022?
+52. What's the distribution of handovers between different SUPI prefixes?
+53. Show me the handover sequence for each SUPI in chronological order
+54. How many microseconds elapsed between the first two handovers in the dataset?
+55. Which NrCellId appears most frequently with TAC 000002?
+56. How many handovers happened with timestamps containing millisecond 890?
+57. What's the pattern of NrCellId selection during handovers?
+58. Show me all handovers where the TAC changed from the previous handover
+59. How many SUPIs experienced handovers to NrCellId 8508800000000?
+60. What's the most common second value in the handover timestamps?
+61. Show me the relationship between SUPI and chosen NrCellId
+62. How many handovers resulted in a TAC change?
+63. What's the typical handover interval for SUPI 602089300000000050000025?
+64. Show me the distribution of NrCellIds by the first two digits
+65. Which handover has the earliest timestamp in the dataset?
+66. How many SUPIs had handovers involving multiple TACs?
+67. What's the ratio of handovers among different hour periods?
+68. Show me all handovers where the NrCellId starts with '9'
+69. How many unique timestamp values appear in the handover data?
+70. What's the most frequent hour for handovers in this dataset?
+71. Show me the transition matrix between NrCellIds for all handovers
+72. How many handovers occurred with TAC values greater than 000003?
+73. What's the distribution of the last 5 digits of NrCellIds in handovers?
+74. Show me all SUPIs that had handovers within a 1-second window
+75. Which TAC appears most frequently with SUPI prefix 60208930000000001?
+76. How many handovers have a NrCellId starting with '8'?
+77. What's the time difference between handovers for SUPI 602089300000000020000033?
+78. Show me the handover count per millisecond on 2025-02-03
+79. How many handovers involved a NrCellId with exactly 14 digits?
+80. What's the relationship between handover time and TAC selection?
+81. Show me all SUPIs that had handovers to TAC 000002
+82. Which SUPI had the longest gap between consecutive handovers?
+83. How many handovers occurred with timestamps ending in '5'?
+84. What's the distribution of SUPIs across different TACs?
+85. Show me the progression of NrCellIds for each SUPI over time
+86. How many handovers happened between TAC 000001 and TAC 000004?
+87. What's the percentage of handovers for each unique NrCellId?
+88. Show me all handovers where the SUPI ends with '33'
+89. Which combination of NrCellId and SUPI appears most frequently?
+90. How many handovers have timestamps with seconds between 25 and 30?
+91. What's the pattern of TAC changes during handovers?
+92. Show me all handovers ordered by NrCellId value
+93. How many handovers occurred with SUPIs ending in even numbers?
+94. What's the distribution of handovers among TACs starting with '0000'?
+95. Show me the correlation between handover time and SUPI value
+96. Which second of the minute had the most handovers?
+97. How many SUPIs had handovers to NrCellIds starting with '7'?
+98. What's the average number of digits in the NrCellIds?
+99. Show me all handovers where the SUPI contains '0000003'
+100. How many handovers occurred with an exact timestamp match?
+101. What's the handover flow between different NrCellIds?
+102. Show me the TAC distribution per minute on 2025-02-03
+103. Which SUPI had handovers with the most diverse timestamps?
+104. How many handovers have a TAC value containing consecutive zeros?
+105. What's the relationship between SUPI last digits and selected NrCellId?
+106. Show me all handovers with timestamps between 10:51:00 and 10:52:00
+107. How many SUPIs had handovers with NrCellIds containing '000000'?
+108. What's the rate of TAC changes per SUPI?
+109. Show me the handover timeline by millisecond precision
+110. Which NrCellId was most frequently paired with SUPI 602089300000000050000025?
+111. How many handovers occurred with TACs containing '04'?
+112. What's the distribution of the middle digits of NrCellIds in handovers?
+113. Show me all SUPIs that had handovers within microsecond precision
+114. How many unique timestamp patterns appear in the handover data?
+115. What's the handover rate per SUPI per minute?
+116. Show me the temporal clustering of handovers
+117. Which SUPI had the most consistent timing between handovers?
+118. How many handovers involved a TAC with suffix '2'?
+119. What's the relationship between NrCellId prefix and handover time?
+120. Show me all handovers where the SUPI middle section contains '00000'
+121. How many distinct timestamp formats appear in the handover records?
+122. What's the most common minute value in the handover timestamps?
+123. Show me the handover sequence by microsecond ordering
+124. Which NrCellId appears in handovers with the widest range of TACs?
+125. How many handovers have timestamps with repeating digit patterns?
+126. What's the frequency distribution of NrCellId length in the dataset?
+127. Show me all SUPIs that had handovers with specific millisecond values
+128. How many TACs were involved in handovers for SUPI 602089300000000010000011?
+129. What's the time delta between handovers for different TACs?
+130. Show me the patterns of consecutive NrCellId selections
+131. Which SUPI had handovers with the most consistently formatted timestamps?
+132. How many handovers have a TAC that differs from the previous handover's TAC?
+133. What's the distribution of timestamp precision in the handover data?
+134. Show me all handovers where both NrCellId and TAC changed simultaneously
+135. How many SUPIs experienced handovers within microsecond 618?
+136. What's the correlation between handover microsecond and NrCellId selection?
+137. Show me the handover timestamp clustering by second
+138. Which NrCellId was involved in handovers with the most unique SUPIs?
+139. How many handovers occurred with timestamps containing ':50:'?
+140. What's the handover transition probability between different NrCellIds?
+141. Show me all SUPIs that had handovers with at least 3 different TACs
+142. How many unique timestamp seconds appear in the handover data?
+143. What's the relationship between SUPI prefix and TAC selection?
+144. Show me the distribution of handovers across timestamp milliseconds
+145. Which combination of SUPI and TAC appears most frequently?
+146. How many handovers involved NrCellIds with repeating digit patterns?
+147. What's the time distribution between consecutive handovers per SUPI?
+148. Show me all handovers with timestamps containing odd seconds
+149. How many SUPIs experienced handovers within multiple minute windows?
+150. What's the handover pattern analysis based on NrCellId grouping?
+
+## Registration State
+1. How many users are currently in active state?
+2. What's the average active session duration across all SUPIs?
+3. Which SUPI has the longest active state duration?
+4. How many registration state changes occurred on 2025-02-03?
+5. What's the distribution of active versus inactive states in our network?
+6. Show me all registration events for SUPI imsi-208930000000001
+7. What's the total active time for all users combined?
+8. How many SUPIs had active sessions longer than 3 hours?
+9. What's the registration state trend over the course of the day?
+10. Which SUPI has the most frequent state changes?
+11. How many users went inactive between 12:00 PM and 2:00 PM?
+12. What's the average inactive session duration per SUPI?
+13. Show me the SUPIs that have been continuously active for over 2 hours
+14. What percentage of our users are currently in active state?
+15. How many registration events happened at exactly 10:50:45?
+16. What's the longest continuous inactive period in the dataset?
+17. Show me all SUPIs that went from active to inactive today
+18. How many active sessions started in the morning hours?
+19. What's the ratio of active to inactive duration for SUPI imsi-208930000000002?
+20. Show me the registration state history for all SUPIs chronologically
+21. Which hour had the most registration state changes?
+22. What's the average session duration by state type?
+23. How many SUPIs have never entered an inactive state?
+24. What's the distribution of session durations across all users?
+25. Show me all registration events with durations under 60 minutes
+26. How many SUPIs have been active for exactly the same duration?
+27. What's the relationship between timestamp and session duration?
+28. Show me the registration activity pattern throughout the day
+29. Which SUPI had the shortest active state duration?
+30. How many registration events occurred with duration over 1000 minutes?
+31. What's the median active session duration across our network?
+32. Show me all SUPIs that were active at 11:00 AM
+33. How many users transitioned from active to inactive after noon?
+34. What's the standard deviation of active session durations?
+35. Show me the correlation between SUPI number and session duration
+36. How many consecutive active states did SUPI imsi-208930000000003 have?
+37. What's the most common session duration range in our network?
+38. Show me all registration events with odd-numbered duration minutes
+39. Which SUPI has the most erratic registration pattern?
+40. How many active sessions lasted exactly 3 hours?
+41. What's the distribution of session start times throughout the day?
+42. Show me all registration events ordered by duration length
+43. How many inactive sessions were recorded for each SUPI?
+44. What's the ratio of short sessions (< 30 min) to long sessions (> 180 min)?
+45. Show me the registration state pattern for the busiest hour
+46. Which SUPI had the most inactive time in total?
+47. How many registration state changes happened per hour?
+48. What's the average time between consecutive registration events?
+49. Show me all SUPIs that were active during the entire afternoon
+50. How many users had active sessions spanning multiple hours?
+51. What's the timing pattern of registration events across all SUPIs?
+52. Show me the SUPIs with the most consistent session durations
+53. How many registration events occurred with timestamps containing ":45"?
+54. What's the difference in active session patterns between morning and afternoon?
+55. Show me all registration events for SUPIs ending with even numbers
+56. Which combination of SUPI and state occurred most frequently?
+57. How many active sessions started at exactly the same minute?
+58. What's the relationship between SUPI identifier and session duration?
+59. Show me the distribution of state changes by minute of the hour
+60. How many SUPIs had active durations within 10% of the average?
+61. What's the variance in session durations for active states?
+62. Show me all SUPIs that had at least one session over 1000 minutes
+63. How many registration events had durations with decimal points?
+64. What's the percentage of SUPIs that experienced both states?
+65. Show me the transition matrix between different registration states
+66. Which SUPI had the most precisely recorded session durations?
+67. How many active sessions began in each hour of the day?
+68. What's the active session overlap pattern between different SUPIs?
+69. Show me all registration events with durations containing digit "5"
+70. How many SUPIs were active at the same time as imsi-208930000000001?
+71. What's the average number of state changes per SUPI?
+72. Show me the registration history for SUPIs with prefix "imsi-20893"
+73. How many registration events have exactly matching timestamps?
+74. What's the distribution of session durations by hour of day?
+75. Show me all SUPIs that had registration changes within 5 minutes of each other
+76. Which timestamp appears most frequently in the registration data?
+77. How many active sessions had durations divisible by 15 minutes?
+78. What's the correlation between timestamp hour and session duration?
+79. Show me the active session count trend throughout the day
+80. How many SUPIs began an active session in the first hour of the dataset?
+81. What's the probability of a SUPI going inactive after 3 hours of activity?
+82. Show me all registration events with durations in ascending order
+83. How many SUPIs had multiple state changes within a single hour?
+84. What's the most common minute value in registration timestamps?
+85. Show me the distribution of SUPIs across different state durations
+86. Which SUPI had active sessions closest to the average duration?
+87. How many registration events had timestamps in the afternoon?
+88. What's the pattern of state changes during peak hours?
+89. Show me all SUPIs that had active sessions under 30 minutes
+90. How many total minutes were users active across the entire dataset?
+91. What's the active session start time pattern for SUPI imsi-208930000000004?
+92. Show me the distribution of registration events by second value
+93. Which combination of timestamp and state appears most consistently?
+94. How many SUPIs had active durations containing fractional minutes?
+95. What's the registration state stability over time for each SUPI?
+96. Show me all registration events where state duration exceeded 200 minutes
+97. How many SUPIs had exactly 2 registration events recorded?
+98. What's the time interval between consecutive state changes?
+99. Show me the correlation between SUPI last digits and session duration
+100. Which hour had the most consistent registration activity?
+101. How many registration events had durations with trailing zero?
+102. What's the difference in active session patterns between different SUPIs?
+103. Show me all registration events by minute of occurrence
+104. How many SUPIs experienced state changes at the same timestamp?
+105. What's the most frequent session duration for active states?
+106. Show me the ratio of active time to total recorded time per SUPI
+107. Which SUPI had the most precisely timed registration events?
+108. How many registration events occurred exactly on the hour?
+109. What's the relationship between duration and subsequent state?
+110. Show me all registration events for SUPIs containing "000000"
+111. How many active sessions began within 5 minutes of another session?
+112. What is the current registration state of SUPI 208930000000001?
+113. Show me the active session count by 15-minute intervals
+114. Which SUPI had the most predictable registration pattern?
+115. How many registration events had durations with integer values only?
+116. What's the frequency distribution of session durations?
+117. Show me all registration events with timestamps containing "10:5"
+118. How many SUPIs had active sessions during lunchtime (12-1 PM)?
+119. What's the correlation between registration state and time of day?
+120. Show me the average session duration trend throughout the day
+121. Which SUPI had the most registration events overall?
+122. How many inactive sessions lasted less than 60 minutes?
+123. What's the probability of a SUPI changing state by hour of day?
+124. Show me all registration events ordered by SUPI and timestamp
+125. How many SUPIs had registration events with matching duration values?
+126. What's the distribution of session durations across different SUPIs?
+127. Show me the rate of state changes by hour for each SUPI
+128. Which timestamp had the most diverse set of registration states?
+129. How many registration events had durations between 100 and 200 minutes?
+130. What's the longest continuous active session in the dataset?
+131. Show me all SUPIs that had registration events in consecutive hours
+132. How many times did SUPI imsi-208930000000002 change states?
+133. What's the pattern of active session initiation across the day?
+134. Show me the distribution of registration events by state and hour
+135. Which SUPI had the most unusual session duration pattern?
+136. How many registration events were recorded with consistent time intervals?
+137. What's the active user count at each hour of the day?
+138. Show me all registration events that occurred during peak network traffic
+139. How many SUPIs had inactive states shorter than their active states?
+140. What's the registration state transition frequency by time of day?
+141. Show me all SUPIs ordered by total active time
+142. Which hour shows the highest active to inactive transition rate?
+143. How many registration events had durations with repeating digits?
+144. What's the average number of active sessions per hour?
+145. What is the current state of SUPI 208930000000003?
+146. How many SUPIs maintained a single state throughout the recorded period?
+147. What's the relationship between SUPI number and state change frequency?
+148. Show me all registration events with timestamps and durations side by side
+149. Which SUPI spent the highest percentage of time in active state?
+150. How many total registration state changes occurred in the dataset?

@@ -1,0 +1,193 @@
+## UE_location_report
+11. Count the total handovers by hour on 2025-02-03
+12. What's the average time between handovers across all SUPIs?
+13. Find SUPIs with handovers to multiple different NrCellIds
+14. How many handovers occurred with TAC value 01?
+15. What percentage of handovers involved NrCellId 9548800000?
+16. Show me the distribution of handovers by second within the minute 10:50
+17. Which handover has the highest millisecond precision recorded?
+18. Are there any SUPIs that had handovers to the same NrCellId multiple times?
+19. What's the pattern of handovers for TAC 05?
+20. How many milliseconds elapsed between consecutive handovers?
+21. Find SUPIs with handovers to NrCellIds containing '777'
+22. What's the correlation between SUPI number and handover timestamp?
+23. Show me handovers for SUPIs ending with '34'
+24. Which NrCellId had handovers for the most diverse set of SUPIs?
+25. How many handovers happened per TAC value?
+26. What's the longest NrCellId in the dataset?
+27. Find all handovers between 10:50 and 10:52
+28. How many SUPIs had exactly 2 handovers?
+29. What's the handover frequency by TAC?
+30. Are there any patterns in the millisecond timing of handovers?
+31. Which SUPI had a handover at 10:55:27?
+32. Count handovers by minute for 2025-02-03
+33. Find SUPIs that had handovers to NrCellIds ending with '000'
+34. What's the average digits length of NrCellIds?
+35. How many unique timestamp values are in the dataset?
+36. Show me handovers for TACs higher than 03
+37. What's the most common SUPI prefix in handover data?
+38. Find handovers with exact millisecond match of .466
+39. Are there any gaps longer than 3 minutes between handovers?
+40. Which NrCellId is associated with the latest handover time?
+41. How many distinct timestamps appear in the handover data?
+42. Find all SUPIs with handovers to NrCellIds starting with '8'
+43. What's the standard deviation of handover times in seconds?
+44. Show me handovers for NrCellIds between 8000000000 and 9000000000
+45. Are there any handovers that occurred within the same second?
+46. What's the distribution of TAC values across all handovers?
+47. Find the time difference between handovers for SUPI 602089300000000100000
+48. How many NrCellIds start with digit 9?
+49. Which SUPI has the most random handover pattern?
+50. What percentage of handovers occurred after 10:55?
+51. Are there any TACs that only appear once in the dataset?
+52. Find all handovers with NrCellId length greater than 12 digits
+53. What's the median time between consecutive handovers?
+54. Show me handovers for SUPIs containing '4000000'
+55. How many handovers have a timestamp with milliseconds greater than .800?
+56. Which NrCellId appears in the most handovers?
+57. Find SUPIs that had handovers with TAC values of both 01 and 05
+58. What's the most active second for handovers in the dataset?
+59. Are there any NrCellIds that appear with multiple different TACs?
+60. How many handovers occurred with millisecond precision between .400 and .600?
+61. Show the distribution of handovers across SUPIs
+62. Which handover was exactly at the half-minute mark?
+63. Find all NrCellIds that had handovers with more than one SUPI
+64. What's the handover count by SUPI suffix?
+65. Are there any handovers that happened exactly 60 seconds apart?
+66. Show me the time pattern of handovers for TAC 04
+67. How many handovers have NrCellIds containing consecutive repeated digits?
+68. What's the least common TAC value in the dataset?
+69. Find handovers with timestamps ending in 5 or 0 seconds
+70. Which SUPI had handovers with the most diverse TAC values?
+71. What's the frequency distribution of the last digit in NrCellIds?
+72. Show me all handovers with TAC values in ascending order
+73. Are there any SUPIs that had handovers at exactly the same millisecond?
+74. How many handovers occurred with NrCellIds longer than 10 digits?
+75. What's the time gap between handovers for SUPI 602089300000000300000?
+76. Find all handovers with both TAC and NrCellId ending in the same digit
+77. How does handover frequency change throughout the minutes?
+78. Which NrCellId had the first handover of the day?
+79. Are there patterns in the distribution of handover timestamps?
+80. Show me handovers with TAC values that contain repeated digits
+81. What's the handover rate per SUPI?
+82. Find all handovers where the NrCellId's first digit matches the TAC value
+83. How many SUPIs had handovers within milliseconds of each other?
+84. What's the average numeric value of all NrCellIds?
+85. Show me handovers for SUPIs with consecutive repeated digits
+86. Which TAC had handovers closest to 11:00 AM?
+87. Find SUPIs that had handovers with NrCellIds containing their own digits
+88. What's the time distribution of handovers by second?
+89. How many NrCellIds have more than one handover associated with them?
+90. Are there any SUPIs that had handovers with sequential TAC values?
+91. What's the average difference between TAC values across all handovers?
+92. Show me handovers for NrCellIds that contain '8800'
+93. How many handovers have TAC values that are prime numbers?
+94. Find the handover with the most complex NrCellId (most unique digits)
+95. What's the percentage of handovers for each SUPI in the dataset?
+96. Are there any SUPIs that had consecutive handovers within 30 seconds?
+97. Show me all handovers with NrCellIds that are palindromes
+98. Which timestamp had multiple handovers occurring simultaneously?
+99. What's the handover pattern for SUPIs containing '2000000'?
+100. How many handovers occurred with both TAC and NrCellId being even numbers?
+
+## Registration State
+1. What's the earliest registration timestamp in the dataset?
+2. How many SUPIs transitioned from active to inactive state?
+3. What's the total active time across all SUPIs on February 3rd?
+4. Which SUPI has the registration with exactly 180.01 minutes duration?
+5. How many registration events occurred at 10:50:45?
+6. What's the average active session duration?
+7. Show me all inactive states ordered by duration
+8. Which SUPI has the longest total registration time?
+9. How many registration events lasted less than 50 minutes?
+10. What's the distribution of registration durations by hour?
+11. Find all SUPIs with active states longer than 200 minutes
+12. How many registration events occurred after noon?
+13. What's the ratio of active to inactive registrations?
+14. Show me the SUPI with the shortest active state
+15. How many registration minutes in total for SUPI imsi-208930000000001?
+16. What's the median duration of all registration states?
+17. Find SUPIs that were active at exactly 12:00 PM
+18. How many inactive states were recorded in the afternoon?
+19. What's the average duration difference between active and inactive states?
+20. Show me registration events where duration is a whole number
+21. Which hour had the most registration state changes?
+22. How many SUPIs had exactly one registration state recorded?
+23. What's the pattern of state changes for imsi-208930000000002?
+24. Find all registrations with durations between 100-200 minutes
+25. What percentage of total registration time was in active state?
+26. Show me the registration duration trend throughout the day
+27. How many SUPIs had both active and inactive states?
+28. What's the registration state with the highest precision in duration minutes?
+29. Find all registration events that occurred during lunch hours (12-2 PM)
+30. Which SUPI had the highest active to inactive duration ratio?
+31. How many registration events have odd-numbered durations?
+32. What's the total inactive time across all SUPIs?
+33. Show me registration states ordered by timestamp for each SUPI
+34. Are there any SUPIs with exactly matching registration durations?
+35. What's the standard deviation of active state durations?
+36. Find all registration events where duration is divisible by 5
+37. How many active registrations lasted more than 3 hours?
+38. What's the correlation between SUPI number and registration duration?
+39. Show me all registrations that started on the hour
+40. Which SUPI has the most consistent registration durations?
+41. How many registration states were recorded per SUPI?
+42. What's the most common registration duration range?
+43. Find SUPIs that were never in inactive state
+44. How many registration events had fractional minute durations?
+45. What's the total active versus inactive time ratio?
+46. Show me the registration duration distribution by state type
+47. How many SUPIs had active registrations spanning across multiple hours?
+48. What's the average time between consecutive state changes?
+49. Find all registration events with durations ending in .02
+50. Which SUPI had the most erratic registration duration pattern?
+51. How many registrations lasted exactly the same time as another?
+52. What's the shortest recorded registration state?
+53. Show me all SUPIs active during the entire morning
+54. How many registration events occurred at 45 seconds past the minute?
+55. What's the distribution of registration durations by minute?
+56. Find the SUPI with registration duration closest to 200 minutes
+57. How many SUPIs have registration durations over 1000 minutes?
+58. What's the time difference between the first and last registration event?
+59. Show me registration states ordered by duration for each SUPI
+60. Which registration state change occurred closest to noon?
+61. How many active registrations started in the morning and ended in the afternoon?
+62. What's the pattern of registration durations for imsi-208930000000003?
+63. Find all SUPIs with registration durations containing decimal .04
+64. How many registration events had both 0 hours and 0 minutes duration?
+65. What's the most common time of day for registration state changes?
+66. Show me SUPIs with registration durations that form a sequence
+67. How many registrations lasted more than the average duration?
+68. What's the relationship between SUPI index and registration state type?
+69. Find all registration events with exactly 4635.04 minutes duration
+70. Which SUPI had the most volatile registration pattern?
+71. How many registration events had durations with exactly two decimal places?
+72. What's the proportion of registrations during morning versus afternoon?
+73. Show me all registration events for SUPIs ending with even digits
+74. How many SUPIs were active at exactly 11:00 AM?
+75. What's the total combined registration time across all SUPIs?
+76. Find registration events where the timestamp minute matches the duration
+77. How many inactive registrations were shorter than 60 minutes?
+78. What's the average active registration duration by morning/afternoon?
+79. Show me all registration events with prime number durations
+80. Which SUPI had registration states change most frequently?
+81. How many registrations had durations that are multiples of 10?
+82. What's the median inactive session duration?
+83. Find SUPIs with registration durations containing repeating digits
+84. How many registrations occurred exactly on the hour?
+85. What's the distribution of registration durations by decimal value?
+86. Show me all registration events with timestamps divisible by 5 minutes
+87. How many SUPIs had active registrations under 2 hours?
+88. What's the most unusual registration duration in the dataset?
+89. Find all registration events where SUPI ends with same digit as duration
+90. Which registration had the longest inactive state?
+91. How many SUPIs were active during exactly 10:55:45?
+92. What's the average active registration duration by SUPI prefix?
+93. Show me all registration events with duration over 1000 minutes
+94. How many registration events had perfect integer durations?
+95. What's the time difference between consecutive registrations for the same SUPI?
+96. Find SUPIs that were never active after 12:00 PM
+97. How many registration durations form a perfect arithmetic sequence?
+98. What's the correlation between timestamp and registration duration?
+99. Show me all registration events with state transitions in chronological order
+100. Which SUPI had the highest number of registration minutes per hour?

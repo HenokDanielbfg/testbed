@@ -412,7 +412,7 @@ func HandleAMFEvents(c *gin.Context) {
 	}
 
 	// Log the received event notification
-	log.Printf("Received AMF event notification: %+v", amfEventNotification)
+	logger.ConsumerLog.Infof("Received AMF event notification: %+v", amfEventNotification)
 
 	// Iterate through the ReportList to process each event report
 	for _, eventReport := range amfEventNotification.ReportList {
@@ -420,9 +420,9 @@ func HandleAMFEvents(c *gin.Context) {
 
 		switch eventReport.Type {
 		case models.AmfEventType_REGISTRATION_STATE_REPORT:
-			log.Printf("Handling registration state report: SUPI: %s, Active: %v", eventReport.Supi, eventReport.State.Active)
+			logger.ConsumerLog.Infof("Handling registration state report: SUPI: %s, Active: %v", eventReport.Supi, eventReport.State.Active)
 			// Add your logic for handling registration state reports
-			log.Printf("UE location is: %s", eventReport.Location)
+			logger.ConsumerLog.Infof("UE location is: %s", eventReport.Location)
 			UEcounter = UEcounter + 1
 			log.Printf("CURRENT COUNT IS: %d", UEcounter)
 			log.Printf("CURRENT UECOUNT from AMF IS: %d", eventReport.NumberOfUes)
@@ -442,24 +442,24 @@ func HandleAMFEvents(c *gin.Context) {
 			RegistrationStateCounter.WithLabelValues(eventReport.Supi, state).Inc()
 
 		case models.AmfEventType_LOCATION_REPORT:
-			log.Printf("Handling location report: Location: %+v", eventReport.Location.NrLocation.Ncgi.NrCellId)
+			logger.ConsumerLog.Infof("Handling location report: Location: %+v", eventReport.Location.NrLocation.Ncgi.NrCellId)
 
 			LocationGauge.WithLabelValues(eventReport.Supi, eventReport.Location.NrLocation.Tai.Tac, eventReport.Location.NrLocation.Ncgi.NrCellId, eventReport.Location.NrLocation.UeLocationTimestamp.String())
 
 		case models.AmfEventType_PRESENCE_IN_AOI_REPORT:
-			log.Printf("Handling presence in AOI report")
+			logger.ConsumerLog.Infof("Handling presence in AOI report")
 			// Add your logic for handling presence in area of interest reports
 
 		case models.AmfEventType_TIMEZONE_REPORT:
-			log.Printf("Handling timezone report: Timezone: %s", eventReport.Timezone)
+			logger.ConsumerLog.Infof("Handling timezone report: Timezone: %s", eventReport.Timezone)
 			// Add your logic for handling timezone reports
 
 		case models.AmfEventType_ACCESS_TYPE_REPORT:
-			log.Printf("Handling access type report: Access Types: %+v", eventReport.AccessTypeList)
+			logger.ConsumerLog.Infof("Handling access type report: Access Types: %+v", eventReport.AccessTypeList)
 			// Add your logic for handling access type reports
 
 		case models.AmfEventType_CONNECTIVITY_STATE_REPORT:
-			log.Printf("Handling connectivity state report: CM Info: %+v", eventReport.CmInfoList)
+			logger.ConsumerLog.Infof("Handling connectivity state report: CM Info: %+v", eventReport.CmInfoList)
 			// Add your logic for handling connectivity state reports
 			if eventReport.CmInfoList[0].CmState == "CONNECTED" {
 				UEConnectivityGauge.WithLabelValues(eventReport.Supi, fmt.Sprintf("%v", eventReport.CmInfoList[0].CmState), fmt.Sprintf("%v", eventReport.CmInfoList[0].AccessType))
@@ -468,15 +468,15 @@ func HandleAMFEvents(c *gin.Context) {
 			}
 
 		case models.AmfEventType_REACHABILITY_REPORT:
-			log.Printf("Handling reachability report: Reachability: %+v", eventReport.Reachability)
+			logger.ConsumerLog.Infof("Handling reachability report: Reachability: %+v", eventReport.Reachability)
 			// Add your logic for handling reachability reports
 
 		case models.AmfEventType_UES_IN_AREA_REPORT:
-			log.Printf("Handling UEs in area report")
+			logger.ConsumerLog.Infof("Handling UEs in area report")
 			// Add your logic for handling UEs in area reports
 
 		default:
-			log.Printf("Received unsupported event type: %v", eventReport.Type)
+			logger.ConsumerLog.Infof("Received unsupported event type: %v", eventReport.Type)
 			http.Error(c.Writer, "Unsupported event type", http.StatusNotImplemented)
 			return
 		}
@@ -526,8 +526,8 @@ func HandleAMFStatus(c *gin.Context) {
 	}
 
 	// Process the notification (e.g., store, log, or trigger other actions)
-	log.Println("received amf status notification")
-	log.Printf("Received AMF Status Change: %s", notification.AmfStatusInfoList[0].StatusChange)
+	logger.ConsumerLog.Infof("received amf status notification")
+	logger.ConsumerLog.Infof("Received AMF Status Change: %s", notification.AmfStatusInfoList[0].StatusChange)
 
 	// Respond with a 204 No Content to indicate successful processing
 	c.Writer.WriteHeader(http.StatusNoContent)

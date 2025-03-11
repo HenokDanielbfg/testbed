@@ -3,7 +3,8 @@ package consumer
 import (
 	"encoding/json"
 	"fmt"
-	"log"
+
+	// "log"
 	"net/http"
 
 	"github.com/free5gc/openapi/Nsmf_EventExposure"
@@ -36,7 +37,7 @@ var (
 func SubscribeToSMFEvents(nwdafCtx *nwdaf_context.NWDAFContext, profile models.NfProfile) (string, error) {
 	// check if already subscribed
 	if nwdafCtx.Subscriptions["smf"] != "" {
-		return "already subscribed to the SMF", nil
+		return "already subscribed to the SMF", fmt.Errorf("already subscribed to the SMF")
 	}
 	// Load dynamic subscription config
 	config, err := factory.LoadSubscriptionConfig("nwdaf_subscriptions.yaml")
@@ -125,24 +126,24 @@ func HandleSMFEvents(c *gin.Context) {
 
 		switch eventReport.Event {
 		case models.SmfEvent_AC_TY_CH:
-			log.Printf("Handling Access type change report: Access type: %s", eventReport.AccType)
+			logger.ConsumerLog.Infof("Handling Access type change report: Access type: %s", eventReport.AccType)
 
 		case models.SmfEvent_PDU_SES_EST:
-			log.Printf("Handling PDU session ESTABLISHMENT report for UE Supi: %s ,pdu sesion id %d", eventReport.Supi, eventReport.PduSeId)
+			logger.ConsumerLog.Infof("Handling PDU session ESTABLISHMENT report for UE Supi: %s ,pdu sesion id %d", eventReport.Supi, eventReport.PduSeId)
 			ActivePduSession.WithLabelValues("active").Inc()
 			PduSessionTotal.WithLabelValues(eventReport.Supi, fmt.Sprintf("%d", eventReport.PduSeId), "Established").Inc()
 		case models.SmfEvent_PDU_SES_REL:
-			log.Printf("Handling PDU session RELEASE report for UE Supi: %s ,pdu sesion id %d", eventReport.Supi, eventReport.PduSeId)
+			logger.ConsumerLog.Infof("Handling PDU session RELEASE report for UE Supi: %s ,pdu sesion id %d", eventReport.Supi, eventReport.PduSeId)
 			ActivePduSession.WithLabelValues("active").Dec()
 			PduSessionTotal.WithLabelValues(eventReport.Supi, fmt.Sprintf("%d", eventReport.PduSeId), "Release").Inc()
 
 		case models.SmfEvent_PLMN_CH:
-			log.Printf("Handling PLMN change report: PLMN Mcc id: %s", eventReport.PlmnId.Mcc)
+			logger.ConsumerLog.Infof("Handling PLMN change report: PLMN Mcc id: %s", eventReport.PlmnId.Mcc)
 
 		case models.SmfEvent_UP_PATH_CH:
-			log.Printf("Handling UP path change report: ")
+			logger.ConsumerLog.Infof("Handling UP path change report: ")
 		default:
-			log.Printf("Received unsupported event type: %v", eventReport.Event)
+			logger.ConsumerLog.Infof("Received unsupported event type: %v", eventReport.Event)
 			http.Error(c.Writer, "Unsupported event type", http.StatusNotImplemented)
 			return
 		}
