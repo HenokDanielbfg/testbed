@@ -133,8 +133,8 @@ def run_llm_conversation(user_message):
                     "content": json.dumps({"error": str(e), "status": "failed"})
                 }
                 messages.append(response_message)
-                # print(response_message)
-                # print(error_message)
+                print(response_message)
+                print(error_message)
                 messages.append(error_message)
                 error_response = client.chat.completions.create(
                     model="gpt-4o",

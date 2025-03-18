@@ -91,3 +91,40 @@ time="2025-03-12T01:33:35+04:00" level=info msg="received SMF event notification
 time="2025-03-12T08:59:05+04:00" level=info msg="Successfully unsubscribed from AMF events. Subscription ID: 4" category=Consumer component=NWDAF
 time="2025-03-12T08:59:05+04:00" level=info msg="Successfully unsubscribed from SMF events. Subscription ID: 3" category=Consumer component=NWDAF
 time="2025-03-12T08:59:05+04:00" level=info msg="Send Deregister NFInstance" category=Consumer component=NWDAF
+time="2025-03-14T09:49:37+04:00" level=info msg=nwdaf category=App component=NWDAF
+time="2025-03-14T09:49:37+04:00" level=info msg="NWDAF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.21.8 linux/amd64" category=App component=NWDAF
+time="2025-03-14T09:49:37+04:00" level=info msg="Read config from [./nwdafcfg.yaml]" category=CFG component=NWDAF
+time="2025-03-14T09:49:37+04:00" level=info msg="nwdafconfig Info: Version[1.0.1] Description[NWDAF instance for 5G core network analytics]" category=CTX component=NWDAF
+time="2025-03-14T09:49:37+04:00" level=info msg="AMF subscription successful: " category=Consumer component=NWDAF
+time="2025-03-14T09:49:37+04:00" level=info msg="AMF Ip address at: http://127.0.0.18:8000" category=Consumer component=NWDAF
+time="2025-03-14T09:49:37+04:00" level=info msg="AMF subscription successful. Subscription ID: 1" category=Consumer component=NWDAF
+time="2025-03-14T09:49:37+04:00" level=info msg="Notify ID is: 7fe0a849-eeed-4e53-a232-05298eba5b2e" category=Consumer component=NWDAF
+time="2025-03-14T09:49:37+04:00" level=info msg="SMF IP address at: http://127.0.0.2:8000" category=Consumer component=NWDAF
+time="2025-03-14T09:49:37+04:00" level=info msg="SMF subscription successful. Subscription ID: 1" category=Consumer component=NWDAF
+time="2025-03-14T09:51:12+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc000544b40 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-14T09:51:35+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc000544b40 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-14T09:51:45+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc000544b40 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-14T09:52:10+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc000544b40 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-17T08:35:07+04:00" level=info msg="Successfully unsubscribed from AMF events. Subscription ID: 1" category=Consumer component=NWDAF
+time="2025-03-17T08:35:07+04:00" level=info msg="Successfully unsubscribed from SMF events. Subscription ID: 1" category=Consumer component=NWDAF
+time="2025-03-17T08:35:07+04:00" level=info msg="Send Deregister NFInstance" category=Consumer component=NWDAF
+time="2025-03-17T08:43:37+04:00" level=info msg=nwdaf category=App component=NWDAF
+time="2025-03-17T08:43:37+04:00" level=info msg="NWDAF version:  \n\tNot specify ldflags (which link version) during go build\n\tgo version: go1.21.8 linux/amd64" category=App component=NWDAF
+time="2025-03-17T08:43:37+04:00" level=info msg="Read config from [./nwdafcfg.yaml]" category=CFG component=NWDAF
+time="2025-03-17T08:43:37+04:00" level=info msg="nwdafconfig Info: Version[1.0.1] Description[NWDAF instance for 5G core network analytics]" category=CTX component=NWDAF
+time="2025-03-17T08:43:37+04:00" level=info msg="AMF subscription successful: " category=Consumer component=NWDAF
+time="2025-03-17T08:43:37+04:00" level=info msg="AMF Ip address at: http://127.0.0.18:8000" category=Consumer component=NWDAF
+time="2025-03-17T08:43:37+04:00" level=info msg="AMF subscription successful. Subscription ID: 1" category=Consumer component=NWDAF
+time="2025-03-17T08:43:37+04:00" level=info msg="Notify ID is: 39f145f4-601a-4bbd-8ac1-eb29d09acc1b" category=Consumer component=NWDAF
+time="2025-03-17T08:43:37+04:00" level=info msg="SMF IP address at: http://127.0.0.2:8000" category=Consumer component=NWDAF
+time="2025-03-17T08:43:37+04:00" level=info msg="SMF subscription successful. Subscription ID: 1" category=Consumer component=NWDAF
+time="2025-03-17T08:45:21+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc0000e3b60 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-17T08:45:33+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc0000e3b60 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-17T08:45:45+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc0000e3b60 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-17T08:45:54+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc0000e3b60 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-17T13:50:14+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc0001c6c00 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-17T13:50:36+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc0001c6c00 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-18T10:55:09+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc00037e060 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-18T10:55:24+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc00037e060 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-18T10:55:45+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc00037e060 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF
+time="2025-03-18T10:55:57+04:00" level=info msg="received SMF event notification &{%!s(*io.LimitedReader=&{0xc00037e060 0}) <nil> %!s(*bufio.Reader=<nil>) %!s(bool=false) %!s(bool=true) {%!s(int32=0) %!s(uint32=0)} %!s(bool=true) %!s(bool=false) %!s(bool=false) %!s(func()=0x78fee0)}" category=Consumer component=NWDAF

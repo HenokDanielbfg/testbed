@@ -222,8 +222,6 @@ if __name__ == "__main__":
     print("Testing pure embedding-based RAG intent matching...")
     test_intent_matching()
     
-    # Uncomment to test the hybrid approach
-    # print("\nHybrid approach is also available via get_best_intent_match_hybrid function")
 
 
 

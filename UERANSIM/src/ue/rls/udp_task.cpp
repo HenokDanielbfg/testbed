@@ -111,11 +111,11 @@ std::mt19937 gen(rd());  // added by Henok
 // Constants and utility functions
 const double min_pos = 0;
 const double max_pos = 150;
-const double min_speed = 0.05;
-const double max_speed = 0.1;
+const double min_speed = 1.2;//0.05;
+const double max_speed = 2.4;//0.1;
 // const double min_speed = 0.5;
 // const double max_speed = 2.0;
-const double hr = 3600;
+const double hr = 150;//3600;
 
 double calculateDistance(double x1, double y1, double x2, double y2) {
     return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
@@ -181,8 +181,8 @@ private:
         // };
         
         std::vector<ActivityLocation> locs = {
-            {dis(gen), dis(gen), "home", TimeOfDay::NIGHT, {2*hr, 0.5*hr}, 0.9},
-            {dis(gen), dis(gen), "work", TimeOfDay::MORNING, {2*hr, 0.5*hr}, 0.9},
+            {dis(gen), dis(gen), "home", TimeOfDay::NIGHT, {3*hr, 0.5*hr}, 0.9},
+            {dis(gen), dis(gen), "work", TimeOfDay::MORNING, {3*hr, 0.5*hr}, 0.9},
             {100.0, 5.0, "gym1", TimeOfDay::AFTERNOON, {1*hr, 0.2*hr}, 0.4},
             {50.0, 140.0, "gym2", TimeOfDay::EVENING, {1*hr, 0.2*hr}, 0.3},
             {35.0, 40.0, "coffee1", TimeOfDay::MORNING, {0.5*hr, 0.1*hr}, 0.5},
@@ -219,17 +219,17 @@ public:
         // Base weights by time of day
         if (currentTime == TimeOfDay::MORNING) {
             typeWeights = {
-                {"work", 0.5}, 
-                {"coffee", 0.3}, 
-                {"gym", 0.1},
-                {"home", 0.1}
+                {"work", 0.8}, 
+                // {"coffee", 0.3}, 
+                // {"gym", 0.1},
+                {"home", 0.2}
             };
         } else if (currentTime == TimeOfDay::LUNCH) {
             typeWeights = {
-                {"restaurant", 0.5}, 
-                {"work", 0.3}, 
-                {"leisure", 0.1},
-                {"park", 0.1}
+                {"restaurant", 0.6}, 
+                {"work", 0.4}//,
+                // {"leisure", 0.1},
+                // {"park", 0.1}
             };
         } else if (currentTime == TimeOfDay::AFTERNOON) {
             typeWeights = {
@@ -359,13 +359,21 @@ public:
 TimeOfDay calculateTimeOfDay(uint64_t currentTime) {
     time_t timeInSeconds = currentTime / 1000;
     struct tm* timeInfo = localtime(&timeInSeconds);
-    int hour = timeInfo->tm_hour;
+    // int hour = timeInfo->tm_hour;
     
-    if (hour >= 7 && hour < 11) return TimeOfDay::MORNING;
-    if (hour >= 11 && hour < 14) return TimeOfDay::LUNCH;
-    if (hour >= 14 && hour < 17) return TimeOfDay::AFTERNOON;
-    if (hour >= 17 && hour < 24) return TimeOfDay::EVENING;
-    return TimeOfDay::NIGHT;
+    // if (hour >= 7 && hour < 11) return TimeOfDay::MORNING;
+    // if (hour >= 11 && hour < 14) return TimeOfDay::LUNCH;
+    // if (hour >= 14 && hour < 17) return TimeOfDay::AFTERNOON;
+    // if (hour >= 17 && hour < 24) return TimeOfDay::EVENING;
+    // return TimeOfDay::NIGHT;
+    int minute = timeInfo->tm_min;  // Use minutes now, as this represents the hour scaled down
+    
+    // Adjust boundaries based on calculated proportional lengths
+    if (minute >= 0 && minute < 10) return TimeOfDay::MORNING;     // Morning
+    if (minute >= 10 && minute < 18) return TimeOfDay::LUNCH;      // Lunch
+    if (minute >= 18 && minute < 26) return TimeOfDay::AFTERNOON;  // Afternoon
+    if (minute >= 26 && minute < 43) return TimeOfDay::EVENING;    // Evening
+    return TimeOfDay::NIGHT;                                      // Night
 }
 
 // Global state variables
@@ -376,7 +384,7 @@ double speed;
 double direction;
 int pauseTime = 0;
 bool Pause = false;
-ActivityLocation currentLocation = {Home.x, Home.y, "home", TimeOfDay::MORNING, {2*hr, 0.5*hr}, 1.0};
+ActivityLocation currentLocation = {Home.x, Home.y, "home", TimeOfDay::MORNING, {3*hr, 0.5*hr}, 0.9};  // Initial location
 
 
 void RlsUdpTask::onLoop() {

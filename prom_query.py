@@ -46,7 +46,7 @@ def query_prometheus(promql) -> list:
 
     
     end_time= datetime.now()
-    start_time= datetime(2025, 2, 3, 8, 30, 45)
+    start_time= datetime(2025, 3, 3, 8, 30, 45)
     # end_time= datetime(2025, 1, 24, 11, 30, 45)
     # prom = PrometheusConnect(url=PROMETHEUS_URL, disable_ssl=True)
 

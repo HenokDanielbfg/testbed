@@ -87,13 +87,13 @@ integrityMaxRate:
 # Optional: Physical location of the UE (x, y, z coordinates)
 phyLocation:
    - on: true
-x: 80
-y: 80
+x: 200 #80
+y: 30 #80
 z: 0
 
 work:
    - on: true
-x1: 95
-y1: 95
+x1: 10 #95
+y1: 200 #95
 z1: 0
 
