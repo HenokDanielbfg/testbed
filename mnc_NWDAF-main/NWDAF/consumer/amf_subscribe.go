@@ -31,6 +31,7 @@ type SubscriptionCommandRequest struct {
 
 // HandleSubscriptionCommand processes subscription/unsubscription commands sent via /nwdaf/command.
 func HandleSubscriptionCommand(c *gin.Context) {
+	log.Println("Received a subscription command")
 	var req SubscriptionCommandRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid request payload"})
@@ -40,7 +41,7 @@ func HandleSubscriptionCommand(c *gin.Context) {
 	// Get the NWDAF context.
 	ctx := nwdaf_context.NWDAF_Self()
 	var responseMsg string
-	var err error
+	// var err error
 	// req.SubscriptionID = ctx.Subscriptions[req.Target]
 	// Determine action and target.
 	if req.Action == "subscribe" {
@@ -57,6 +58,10 @@ func HandleSubscriptionCommand(c *gin.Context) {
 				c.JSON(http.StatusInternalServerError, gin.H{"error": fmt.Sprintf("AMF subscription failed: %v", subErr)})
 				return
 			}
+			if subID == "already subscribed to the AMF" {
+				c.JSON(http.StatusOK, gin.H{"message": "already subscribed to the AMF"})
+				return
+			}
 			responseMsg = fmt.Sprintf("Subscribed to AMF events successfully. Subscription ID: %s", subID)
 		} else if req.Target == "smf" {
 			// Query NRF for SMF instances.
@@ -69,6 +74,10 @@ func HandleSubscriptionCommand(c *gin.Context) {
 			subID, subErr := SubscribeToSMFEvents(ctx, smfInstances.NfInstances[0])
 			if subErr != nil {
 				c.JSON(http.StatusInternalServerError, gin.H{"error": fmt.Sprintf("SMF subscription failed: %v", subErr)})
+				return
+			}
+			if subID == "already subscribed to the SMF" {
+				c.JSON(http.StatusOK, gin.H{"message": "already subscribed to the SMF"})
 				return
 			}
 			responseMsg = fmt.Sprintf("Subscribed to SMF events successfully. Subscription ID: %s", subID)
@@ -91,9 +100,13 @@ func HandleSubscriptionCommand(c *gin.Context) {
 				return
 			}
 			// Unsubscribe from AMF events.
-			err = UnsubscribeFromAMF_UEStatus(ctx, req.SubscriptionID, amfInstances.NfInstances[0])
+			respd, err := UnsubscribeFromAMF_UEStatus(ctx, req.SubscriptionID, amfInstances.NfInstances[0])
 			if err != nil {
 				c.JSON(http.StatusInternalServerError, gin.H{"error": fmt.Sprintf("AMF unsubscription failed: %v", err)})
+				return
+			}
+			if respd != "" {
+				c.JSON(http.StatusOK, gin.H{"message": "No existing subscription to the AMF"})
 				return
 			}
 			responseMsg = fmt.Sprintf("Unsubscribed from AMF events successfully. Subscription ID: %s", req.SubscriptionID)
@@ -105,9 +118,13 @@ func HandleSubscriptionCommand(c *gin.Context) {
 				return
 			}
 			// Unsubscribe from SMF events.
-			err = UnsubscribeFromSMF_events(ctx, req.SubscriptionID, smfInstances.NfInstances[0])
+			respd, err := UnsubscribeFromSMF_events(ctx, req.SubscriptionID, smfInstances.NfInstances[0])
 			if err != nil {
 				c.JSON(http.StatusInternalServerError, gin.H{"error": fmt.Sprintf("SMF unsubscription failed: %v", err)})
+				return
+			}
+			if respd != "" {
+				c.JSON(http.StatusOK, gin.H{"message": "No existing subscription to the AMF"})
 				return
 			}
 			responseMsg = fmt.Sprintf("Unsubscribed from SMF events successfully. Subscription ID: %s", req.SubscriptionID)
@@ -186,7 +203,7 @@ func SubscribeToAMF_UEStatus(nwdafCtx *nwdaf_context.NWDAFContext, profile model
 
 	// check if already subscribed
 	if nwdafCtx.Subscriptions["amf"] != "" {
-		return "already subscribed to the AMF", fmt.Errorf("already subscribed to the AMF")
+		return "already subscribed to the AMF", nil
 	}
 	// Load dynamic subscription config
 	sub_config, err := factory.LoadSubscriptionConfig("nwdaf_subscriptions.yaml")
@@ -284,23 +301,23 @@ func SubscribeToAMF_UEStatus(nwdafCtx *nwdaf_context.NWDAFContext, profile model
 	return resp.SubscriptionId, nil
 }
 
-func UnsubscribeFromAMF_UEStatus(nwdafCtx *nwdaf_context.NWDAFContext, subscriptionId string, amfProfile models.NfProfile) error {
+func UnsubscribeFromAMF_UEStatus(nwdafCtx *nwdaf_context.NWDAFContext, subscriptionId string, amfProfile models.NfProfile) (string, error) {
 	// check if there is no subscription
 	if nwdafCtx.Subscriptions["amf"] == "" {
-		return fmt.Errorf("no subscription to AMF")
+		return "no subscription to AMF", nil
 	}
 
 	subscriptionId = nwdafCtx.Subscriptions["amf"]
 
 	if subscriptionId == "" {
-		return fmt.Errorf("invalid subscription ID")
+		return "", fmt.Errorf("invalid subscription ID")
 	}
 
 	if len(amfProfile.Ipv4Addresses) == 0 {
-		return fmt.Errorf("no valid AMF address found")
+		return "", fmt.Errorf("no valid AMF address found")
 	}
 	if subscriptionId == "" {
-		return fmt.Errorf("invalid subscription ID")
+		return "", fmt.Errorf("invalid subscription ID")
 	}
 
 	amfAddress := fmt.Sprintf("http://%s:8000", amfProfile.Ipv4Addresses[0]) // Adjust port if needed
@@ -311,7 +328,7 @@ func UnsubscribeFromAMF_UEStatus(nwdafCtx *nwdaf_context.NWDAFContext, subscript
 
 	ctx, _, err := nwdafCtx.GetTokenCtx(models.ServiceName_NAMF_EVTS, models.NfType_AMF)
 	if err != nil {
-		return fmt.Errorf("failed to get token context: %v", err)
+		return "", fmt.Errorf("failed to get token context: %v", err)
 	}
 	// defer cancel()
 
@@ -328,18 +345,18 @@ func UnsubscribeFromAMF_UEStatus(nwdafCtx *nwdaf_context.NWDAFContext, subscript
 
 	httpResp, err := client.IndividualSubscriptionDocumentApi.DeleteSubscription(ctx, subscriptionId)
 	if err != nil {
-		return fmt.Errorf("AMF unsubscription failed: %v", err)
+		return "", fmt.Errorf("AMF unsubscription failed: %v", err)
 	}
 	// logger.ConsumerLog.Info("Successfully unsubscribed from AMF events%s", httpResp.StatusCode)
 
 	// defer httpResp.Body.Close()
 
 	if httpResp.StatusCode != http.StatusOK {
-		return fmt.Errorf("unexpected status code on unsubscribe: %d", httpResp.StatusCode)
+		return "", fmt.Errorf("unexpected status code on unsubscribe: %d", httpResp.StatusCode)
 	}
 	delete(nwdafCtx.Subscriptions, "amf")
 	logger.ConsumerLog.Infof("Successfully unsubscribed from AMF events. Subscription ID was: %s", subscriptionId)
-	return nil
+	return "", nil
 }
 
 type ProblemDetails struct {

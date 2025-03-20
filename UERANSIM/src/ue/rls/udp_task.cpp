@@ -350,7 +350,7 @@ public:
 
     bool hasReachedDestination(double currentX, double currentY, 
                               double destX, double destY, 
-                              double threshold = 1.0) {
+                              double threshold = 4.0) {
         return calculateDistance(currentX, currentY, destX, destY) < threshold;
     }
 };
@@ -396,7 +396,7 @@ void RlsUdpTask::onLoop() {
         // Handle pause time
         if (Pause && pauseTime > 0) {
             pauseTime--;
-            // m_logger->info("Paused at location. Time remaining: %d", pauseTime);
+            m_logger->info("Paused at location. Time remaining: %d", pauseTime);
             return;
         }
 
@@ -452,7 +452,7 @@ void RlsUdpTask::onLoop() {
             double dx = x_dest - simPos.x;
             double dy = y_dest - simPos.y;
             double distance = std::sqrt(dx*dx + dy*dy);
-            // m_logger->info("Distance is: %f", distance);
+            m_logger->info("Distance is: %f", distance);
 
             if (activityModel.hasReachedDestination(simPos.x, simPos.y, x_dest, y_dest)) {
                 simPos.x = x_dest;

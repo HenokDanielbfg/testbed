@@ -276,11 +276,10 @@ def get_df_active(start_time=None, end_time=None):
         df = df[df['active_UEs'].shift() != df['active_UEs']]
         df['duration'] = (df['timestamp'].shift(-1) - df['timestamp']).fillna(pd.Timedelta(seconds=0))
 
-        # Reset index after sorting
-        df = df.reset_index(drop=True)
         df['timestamp'] = df['timestamp'] + pd.Timedelta(hours=4)
         df['timestamp'] = df['timestamp'].dt.strftime('%Y-%m-%d %H:%M:%S')
-
+        # Reset index after sorting
+        df = df.reset_index(drop=True)
         return df.to_json()
     else:
         return pd.DataFrame(columns=['timestamp', 'active_UEs']).to_json()
@@ -338,16 +337,16 @@ def get_reg(start_time=None, end_time=None):
         )
         final_df = final_df.sort_values(by='timestamp')
         final_df['timestamp'] = final_df['timestamp'] + pd.Timedelta(hours=4)
+        final_df['timestamp'] = final_df['timestamp'].dt.strftime('%Y-%m-%d %H:%M:%S')
+        # final_df['timestamp'] = final_df['timestamp'].astype(str)
         # Reset index after sorting
-        final_df = final_df.reset_index(drop=True)
-        df['timestamp'] = df['timestamp'].dt.strftime('%Y-%m-%d %H:%M:%S')
-
+        final_df = final_df.reset_index(drop=True)        
         return final_df.to_json()
     else:
         return pd.DataFrame(columns=['timestamp', 'supi', 'state', 'state_desc', 'duration_minutes']).to_json()
 
 
 if __name__ == "__main__":
-    print(query_prometheus('active_UEs'))
+    print(query_prometheus('amf_ue_registration_state'))
     # query_prometheus('amf_ue_registration_state')
 

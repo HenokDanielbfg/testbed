@@ -37,7 +37,7 @@ var (
 func SubscribeToSMFEvents(nwdafCtx *nwdaf_context.NWDAFContext, profile models.NfProfile) (string, error) {
 	// check if already subscribed
 	if nwdafCtx.Subscriptions["smf"] != "" {
-		return "already subscribed to the SMF", fmt.Errorf("already subscribed to the SMF")
+		return "already subscribed to the SMF", nil
 	}
 	// Load dynamic subscription config
 	config, err := factory.LoadSubscriptionConfig("nwdaf_subscriptions.yaml")
@@ -152,22 +152,22 @@ func HandleSMFEvents(c *gin.Context) {
 	c.Writer.WriteHeader(http.StatusOK)
 }
 
-func UnsubscribeFromSMF_events(nwdafCtx *nwdaf_context.NWDAFContext, subscriptionId string, smfProfile models.NfProfile) error {
+func UnsubscribeFromSMF_events(nwdafCtx *nwdaf_context.NWDAFContext, subscriptionId string, smfProfile models.NfProfile) (string, error) {
 
 	// check if there is no subscription
 	if nwdafCtx.Subscriptions["smf"] == "" {
-		return fmt.Errorf("no subscription to SMF")
+		return "no subscription to SMF", nil
 	}
 	subscriptionId = nwdafCtx.Subscriptions["smf"]
 	if subscriptionId == "" {
-		return fmt.Errorf("invalid subscription ID")
+		return "", fmt.Errorf("invalid subscription ID")
 	}
 
 	if len(smfProfile.Ipv4Addresses) == 0 {
-		return fmt.Errorf("no valid AMF address found")
+		return "", fmt.Errorf("no valid AMF address found")
 	}
 	if subscriptionId == "" {
-		return fmt.Errorf("invalid subscription ID")
+		return "", fmt.Errorf("invalid subscription ID")
 	}
 
 	amfAddress := fmt.Sprintf("http://%s:8000", smfProfile.Ipv4Addresses[0]) // Adjust port if needed
@@ -178,20 +178,20 @@ func UnsubscribeFromSMF_events(nwdafCtx *nwdaf_context.NWDAFContext, subscriptio
 
 	ctx, _, err := nwdafCtx.GetTokenCtx(models.ServiceName_NSMF_EVENT_EXPOSURE, models.NfType_SMF)
 	if err != nil {
-		return fmt.Errorf("failed to get token context: %v", err)
+		return "", fmt.Errorf("failed to get token context: %v", err)
 	}
 
 	httpResp, err := client.DefaultApi.SubscriptionsSubIdDelete(ctx, subscriptionId)
 	if err != nil {
-		return fmt.Errorf("SMF unsubscription failed: %v", err)
+		return "", fmt.Errorf("SMF unsubscription failed: %v", err)
 	}
 
 	// defer httpResp.Body.Close()
 
 	if httpResp.StatusCode != http.StatusOK {
-		return fmt.Errorf("unexpected status code on unsubscribe: %d", httpResp.StatusCode)
+		return "", fmt.Errorf("unexpected status code on unsubscribe: %d", httpResp.StatusCode)
 	}
 	delete(nwdafCtx.Subscriptions, "smf")
 	logger.ConsumerLog.Infof("Successfully unsubscribed from SMF events. Subscription ID was: %s", subscriptionId)
-	return nil
+	return "", nil
 }
