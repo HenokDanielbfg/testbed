@@ -111,11 +111,11 @@ std::mt19937 gen(rd());  // added by Henok
 // Constants and utility functions
 const double min_pos = 0;
 const double max_pos = 150;
-const double min_speed = 1.2;//0.05;
-const double max_speed = 2.4;//0.1;
+const double min_speed = 0.05;
+const double max_speed = 0.1;
 // const double min_speed = 0.5;
 // const double max_speed = 2.0;
-const double hr = 150;//3600;
+const double hr = 3600;
 
 double calculateDistance(double x1, double y1, double x2, double y2) {
     return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
@@ -359,21 +359,21 @@ public:
 TimeOfDay calculateTimeOfDay(uint64_t currentTime) {
     time_t timeInSeconds = currentTime / 1000;
     struct tm* timeInfo = localtime(&timeInSeconds);
-    // int hour = timeInfo->tm_hour;
+    int hour = timeInfo->tm_hour;
     
-    // if (hour >= 7 && hour < 11) return TimeOfDay::MORNING;
-    // if (hour >= 11 && hour < 14) return TimeOfDay::LUNCH;
-    // if (hour >= 14 && hour < 17) return TimeOfDay::AFTERNOON;
-    // if (hour >= 17 && hour < 24) return TimeOfDay::EVENING;
-    // return TimeOfDay::NIGHT;
-    int minute = timeInfo->tm_min;  // Use minutes now, as this represents the hour scaled down
+    if (hour >= 7 && hour < 11) return TimeOfDay::MORNING;
+    if (hour >= 11 && hour < 14) return TimeOfDay::LUNCH;
+    if (hour >= 14 && hour < 17) return TimeOfDay::AFTERNOON;
+    if (hour >= 17 && hour < 24) return TimeOfDay::EVENING;
+    return TimeOfDay::NIGHT;
+    // int minute = timeInfo->tm_min;  // Use minutes, one day scaled down to one hour
     
-    // Adjust boundaries based on calculated proportional lengths
-    if (minute >= 0 && minute < 10) return TimeOfDay::MORNING;     // Morning
-    if (minute >= 10 && minute < 18) return TimeOfDay::LUNCH;      // Lunch
-    if (minute >= 18 && minute < 26) return TimeOfDay::AFTERNOON;  // Afternoon
-    if (minute >= 26 && minute < 43) return TimeOfDay::EVENING;    // Evening
-    return TimeOfDay::NIGHT;                                      // Night
+    // // Adjust boundaries based on calculated proportional lengths
+    // if (minute >= 0 && minute < 10) return TimeOfDay::MORNING;     // Morning
+    // if (minute >= 10 && minute < 18) return TimeOfDay::LUNCH;      // Lunch
+    // if (minute >= 18 && minute < 26) return TimeOfDay::AFTERNOON;  // Afternoon
+    // if (minute >= 26 && minute < 43) return TimeOfDay::EVENING;    // Evening
+    // return TimeOfDay::NIGHT;                                      // Night
 }
 
 // Global state variables

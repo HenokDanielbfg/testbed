@@ -194,34 +194,6 @@ func (a *NwdafApp) handleNwdafInfo(w http.ResponseWriter, r *http.Request) {
 	// json.NewEncoder(w).Encode(a.nwdaf)
 }
 
-// func QueryNRFForNF(nwdafCtx *nwdaf_context.NWDAFContext, NFType models.NfType) (*models.SearchResult, error) {
-// 	nrfUri := nwdafCtx.NrfUri
-
-// 	configuration := Nnrf_NFDiscovery.NewConfiguration()
-// 	configuration.SetBasePath(nrfUri)
-// 	client := Nnrf_NFDiscovery.NewAPIClient(configuration)
-// 	ctx, _, err := nwdafCtx.GetTokenCtx(models.ServiceName_NNRF_DISC, models.NfType_NRF)
-// 	if err != nil {
-// 		return nil, err
-// 	}
-// 	result, res, err := client.NFInstancesStoreApi.SearchNFInstances(ctx, NFType, models.NfType_NWDAF, nil)
-// 	if res != nil && res.StatusCode == http.StatusTemporaryRedirect {
-// 		return nil, fmt.Errorf("temporary Redirect For Non NRF Consumer")
-// 	}
-// 	if res == nil || res.Body == nil {
-// 		return &result, err
-// 	}
-// 	defer func() {
-// 		if res != nil {
-// 			if bodyCloseErr := res.Body.Close(); bodyCloseErr != nil {
-// 				err = fmt.Errorf("SearchNFInstances' response body cannot close: %+w", bodyCloseErr)
-// 			}
-// 		}
-// 	}()
-// 	return &result, err
-
-// }
-
 // Error response structure for issues like 400, 404, etc.
 type ProblemDetails struct {
 	Status int    `json:"status"`
