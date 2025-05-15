@@ -9,6 +9,9 @@ from Model import *
 import os.path
 from prometheus_api_client import PrometheusConnect
 from datetime import timedelta
+from sklearn.pipeline import Pipeline
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.metrics import accuracy_score
 
 PROMETHEUS_URL = "http://localhost:9090"
 prom = PrometheusConnect(url=PROMETHEUS_URL, disable_ssl=True)
@@ -19,7 +22,7 @@ prom = PrometheusConnect(url=PROMETHEUS_URL, disable_ssl=True)
 ###################### Handover prediction ######################
 def get_df_location(start_time=None, end_time=datetime.now()):   #  endtime set on 24th Jan 2025 at 11:30:45
     # Query Prometheus
-    start_time=end_time - timedelta(days=7)
+    start_time=end_time - timedelta(days=10)
     metric_data = prom.custom_query_range(
         query='UE_location_report',
         start_time=start_time,
@@ -66,56 +69,130 @@ def get_df_location(start_time=None, end_time=datetime.now()):   #  endtime set 
     
     return df
 
-def predict_ue_location(target_ue, target_time):
+def predict_ue_location(target_ue):
+    # Load the dataset
+    df = get_df_location()
+    # Convert the 'time' column to datetime
+    df['time'] = pd.to_datetime(df['time'])
 
-    data = get_df_location()
-    # Convert time to datetime
-    data['time'] = pd.to_datetime(data['time'])
-    # Filter data for specific UE
-    ue_data = data[data['supi'] == target_ue].copy()
-    # Extract hour from timestamp
-    ue_data['hour'] = ue_data['time'].dt.hour
-    
-    # Create time windows 
-    def get_time_window(hour):
-        if 5 <= hour < 11: return 'morning'
-        elif 11 <= hour < 14: return 'lunch'
-        elif 14 <= hour < 17: return 'afternoon'
-        elif 17 <= hour < 24: return 'evening'
-        else: return 'night'
-    
-    ue_data['time_window'] = ue_data['hour'].apply(get_time_window)
-    
-    # Calculate probabilities for each cell during each time window
-    time_window_probs = defaultdict(lambda: defaultdict(int))
-    
-    for window in ['morning', 'lunch', 'afternoon', 'evening', 'night']:
-        window_data = ue_data[ue_data['time_window'] == window]
-        total_records = len(window_data)
-        if total_records > 0:
-            cell_counts = window_data['NrCellId'].value_counts()
-            for cell in cell_counts.index:
-                time_window_probs[window][cell] = cell_counts[cell] / total_records
-    
-    # Get time window for target time
-    target_dt = datetime.strptime(target_time, '%Y-%m-%d %H:%M:%S')
-    target_window = get_time_window(target_dt.hour)
-    
-    # Get probabilities for target time window
-    cell_probs = time_window_probs[target_window]
-    
-    if not cell_probs:
-        return "Insufficient data for prediction"
-    
-    # Get most likely cell
-    most_likely_cell = max(cell_probs.items(), key=lambda x: x[1])
-    # display(ue_data)
-    
+    # Extract the hour from the timestamp
+    df['hour'] = df['time'].dt.hour
+    # df['minute'] = df['time'].dt.minute
+    # Define the time-of-day function
+    def get_time_of_day(hour):
+        if hour >= 7 and hour < 11:
+            return 1#"MORNING"
+        elif hour >= 11 and hour < 14:
+            return 2#"LUNCH"
+        elif hour >= 14 and hour < 17:
+            return 3#"AFTERNOON"
+        elif hour >= 17 and hour < 24:
+            return 4#"EVENING"
+        return 5#"NIGHT"
+    df['time_of_day'] = df['hour'].apply(get_time_of_day)
+    # Mapping of NrCellId to XY coordinates
+    # cell_coords = {30: (5, 170), 40: (5, 5), 50: (170, 5), 60: (170, 170)}
+    df = df.sort_values(by=['supi', 'time']) 
+    # Add columns for the previous two cells (GNBs) each UE was connected to 
+    df['prev_cell_1'] = df.groupby('supi')['NrCellId'].shift(1) 
+    df['prev_cell_2'] = df.groupby('supi')['NrCellId'].shift(2)
+    cell_freq = df.groupby(['supi', 'prev_cell_1','time_of_day']).size().reset_index(name='frequency') 
+    df = pd.merge(df, cell_freq, on=['supi', 'prev_cell_1','time_of_day'], how='left') 
+    # Drop rows where next_cell is missing (last record per subscriber) 
+    df_model = df.dropna(subset=['prev_cell_1','prev_cell_2']).copy()
+    # Define features and target 
+    features = ['supi', 'frequency', 'prev_cell_1', 'prev_cell_2', 'time_of_day']
+    target = 'NrCellId' 
+    X = df_model[features] 
+    y = df_model[target]   
+    model = GradientBoostingClassifier(n_estimators=100, max_depth=9, subsample=1.0, learning_rate=0.05, random_state=42)
+    # Split the data into training and testing sets (using stratification) 
+    X_train, X_test, y_train, y_test = train_test_split( 
+    X, y, test_size=0.2, random_state=42)  
+    pipeline = Pipeline([('clf', model)]) 
+    pipeline.fit(X_train, y_train)    
+    latest = (
+        df_model.loc[df_model['supi'] == target_ue]
+                .sort_values('time')
+                .tail(1)          # newest record
+    )
+
+    if latest.empty or latest[['prev_cell_1', 'prev_cell_2']].isna().any(axis=None):
+        raise ValueError("Need at least two historical cells for this UE.")
+    latest['prev_cell_2'] = latest['prev_cell_1']   # push old lag-1 into lag-2
+    latest['prev_cell_1'] = latest['NrCellId']      # current cell becomes lag-1
+    X_new = latest[features] 
+    # Predict the next cell
+    next_cell = pipeline.predict(X_new)[0]
     return {
-        'predicted_cell': most_likely_cell[0],
-        'confidence': most_likely_cell[1],
-        'all_probabilities': dict(cell_probs)
+        'predicted_cell': next_cell,
+        'target_ue': target_ue
     }
+
+
+# def predict_ue_location(target_ue, target_time):
+
+#     data = get_df_location()
+#     # Convert time to datetime
+#     data['time'] = pd.to_datetime(data['time'])
+#     data['hour'] = data['time'].dt.hour
+#     # df['minute'] = df['time'].dt.minute
+#     # Define the time-of-day function
+#     def get_time_of_day(hour):
+#         if hour >= 7 and hour < 11:
+#             return 1#"MORNING"
+#         elif hour >= 11 and hour < 14:
+#             return 2#"LUNCH"
+#         elif hour >= 14 and hour < 17:
+#             return 3#"AFTERNOON"
+#         elif hour >= 17 and hour < 24:
+#             return 4#"EVENING"
+#         return 5#"NIGHT"
+#     # Filter data for specific UE
+#     ue_data = data[data['supi'] == target_ue].copy()
+#     # Extract hour from timestamp
+#     ue_data['hour'] = ue_data['time'].dt.hour
+    
+#     # # Create time windows 
+#     # def get_time_window(hour):
+#     #     if 5 <= hour < 11: return 'morning'
+#     #     elif 11 <= hour < 14: return 'lunch'
+#     #     elif 14 <= hour < 17: return 'afternoon'
+#     #     elif 17 <= hour < 24: return 'evening'
+#     #     else: return 'night'
+    
+#     ue_data['time_window'] = ue_data['hour'].apply(get_time_window)
+    
+#     # Calculate probabilities for each cell during each time window
+#     time_window_probs = defaultdict(lambda: defaultdict(int))
+    
+#     for window in ['morning', 'lunch', 'afternoon', 'evening', 'night']:
+#         window_data = ue_data[ue_data['time_window'] == window]
+#         total_records = len(window_data)
+#         if total_records > 0:
+#             cell_counts = window_data['NrCellId'].value_counts()
+#             for cell in cell_counts.index:
+#                 time_window_probs[window][cell] = cell_counts[cell] / total_records
+    
+#     # Get time window for target time
+#     target_dt = datetime.strptime(target_time, '%Y-%m-%d %H:%M:%S')
+#     target_window = get_time_window(target_dt.hour)
+    
+#     # Get probabilities for target time window
+#     cell_probs = time_window_probs[target_window]
+    
+#     if not cell_probs:
+#         return "Insufficient data for prediction"
+    
+#     # Get most likely cell
+#     most_likely_cell = max(cell_probs.items(), key=lambda x: x[1])
+#     # display(ue_data)
+    
+#     return {
+#         'predicted_cell': most_likely_cell[0],
+#         'confidence': most_likely_cell[1],
+#         'all_probabilities': dict(cell_probs)
+#     }
 
 
 ###################### registration/deregistration time prediction ######################
