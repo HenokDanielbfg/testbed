@@ -50,7 +50,7 @@ def analytics():
     #     print("analytics")
     # else:
     #     data['data'] = "None (Wrong)"
-    result = AnLF.predict_ue_location(json_param.get('TargetUe') ,json_param.get('TargetTime'))
+    result = AnLF.predict_ue_location(json_param.get('TargetUe'))# ,json_param.get('TargetTime'))
     # data["result"] = str(result)
     # print("analytics")
     return json.dumps(result)
